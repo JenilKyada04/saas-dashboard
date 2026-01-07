@@ -19,10 +19,10 @@ function Card() {
                 </div>
                 <div className="flex justify-between">
                     <p>level : <span className="pl-1" >Intermediate</span></p>
-                    <p className="text-blue-500 cursor-pointer flex items-center">
+                    <h4 className="text-blue-500 cursor-pointer flex justify-center items-center">
                         <p>Continue</p>
                         <IoMdArrowRoundForward />
-                    </p>
+                    </h4>
                 </div>
             </div>
         </div>
