@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 
 const navItems = [
-  { name: "Dashboard", href: "/", },
-  { name: "Courses", href: "/courses",  },
-  { name: "Students", href: "/students",},
-  { name: "Teachers", href: "/teachers",  },
-  { name: "Events", href: "/events",  },
+  { name: "Dashboard", href: "/", icon: "<img src='/img/icon/dashboard.png' className='w-5 h-5' alt='Dashboard' />" },
+  { name: "Courses", href: "/courses", },
+  { name: "Students", href: "/students", },
+  { name: "Teachers", href: "/teachers", },
+  { name: "Events", href: "/events", },
   { name: "Exams", href: "/exams", },
-  { name: "Blogs", href: "/blogs",  },
-  {name : "Communities", href: "/communities",  }
+  { name: "Blogs", href: "/blogs", },
+  { name: "Communities", href: "/communities", }
 ];
 
 export default function Sidebar() {
@@ -34,31 +34,35 @@ export default function Sidebar() {
         ${open ? "translate-x-0" : "-translate-x-full"}
         md:translate-x-0`}
       >
-        <h1 className="text-xl font-bold mb-10 text-blue-600">EDUBOARD</h1>
+        <div className="flex flex-col items-center justify-center mb-5">
+          <img src="/img/logo.png" className="w-30" alt="" />
+          <h1 className="text-xl font-bold mb-10 text-blue-600">EDUBOARD</h1>
+        </div>
 
         <nav className="space-y-2">
           {navItems.map((item) => {
             const active = pathname === item.href;
-
             return (
+
               <Link
+
                 key={item.name}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={`flex items-center gap-3 px-4 py-2 rounded-lg transition
-                  ${
-                    active
-                      ? "bg-blue-50 text-blue-600 font-semibold"
-                      : "text-gray-600 hover:bg-gray-100"
+                  ${active
+                    ? "bg-blue-50 text-blue-600 font-semibold"
+                    : "text-gray-600 hover:bg-gray-100"
                   }`}
-              >
+              >   
+              {item.icon}
                 {item.name}
                 
               </Link>
             );
           })}
         </nav>
-        
+
       </aside>
     </>
   );

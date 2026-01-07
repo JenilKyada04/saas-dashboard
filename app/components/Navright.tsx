@@ -1,5 +1,9 @@
 import { FiSearch, FiBell, FiMenu } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import { Dropdown } from "./Dropdown";
+
+
+
 function Navright() {
     return (
         <div className="flex items-center gap-4  ">
@@ -10,9 +14,10 @@ function Navright() {
                     placeholder="Search"
                 />
             </div>
-            <img src="/img/chat.png" className="  " alt="" />
-            <img src="/img/savebtn.png" alt="" />
-            <img src="/img/bell.png" alt="" />
+            <Dropdown />
+            <img src="/img/icon/chat.png" className="  " alt="" />
+            <img src="/img/icon/savebtn.png" alt="" />
+            <img src="/img/icon/bell.png" alt="" />
             <img
                 src="/img/profile.png"
                 className="rounded-full w-10 hover:ring-1 hover:ring-red-500 cursor-pointer"
