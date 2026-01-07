@@ -21,3 +21,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+// https://www.figma.com/design/zAPjoHfKfbPXuYLkelw6Do/Education-Dashboard-Practice-Backup?node-id=9-1216&p=f

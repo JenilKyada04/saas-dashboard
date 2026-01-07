@@ -1,32 +1,122 @@
-
 import { IoMdArrowRoundForward } from "react-icons/io";
 
-function Card() {
-    return (
-        <div className=" p-2 grid md:grid-cols-3 gap-2   " >
-            <div className=" white-blue p-4 border-2 rounded-3xl">
-                <h5 className="font-semibold" >UI Design: Zero to Mastery</h5>
-                <p className="font-normal"> David Hartmann</p>
-                <div className="flex font-light text-gray-600 text-[12px] gap-3 ">
-                    <div>
-                        <p>23/30 Lesson</p>
-                        <p>615 Students</p>
-                    </div>
-                    <div>
-                        <p>77/110 Hours</p>
-                        <p>2/3 Exams </p>
-                    </div>
-                </div>
-                <div className="flex justify-between">
-                    <p>level : <span className="pl-1" >Intermediate</span></p>
-                    <h4 className="text-blue-500 cursor-pointer flex justify-center items-center">
-                        <p>Continue</p>
-                        <IoMdArrowRoundForward />
-                    </h4>
-                </div>
+const courses = [
+  {
+    id: 1,
+    title: "UI Design: Zero to Mastery",
+    instructor: "David Hartmann",
+    progress: 70,
+    lessons: "23/30",
+    students: "615",
+    hours: "77/110",
+    exams: "2/3",
+    level: "Intermediate",
+    color : "#3b82f6",
+  },
+  {
+    id: 2,
+    title: "UI/UX Design    ",
+    instructor: "Lara Zuki",
+    progress: 60,
+    lessons: "20/30",
+    students: "356",
+    hours: "60/100",
+    exams: "2/3",
+    level: "Basic",
+    color: "#FFA500"
+  },
+  {
+    id: 3,
+    title: "Frontend Development",
+    instructor: "Calvin Patil",
+    progress: 25,
+    lessons: "10/40",
+    students: "3,615",
+    hours: "75/300",
+    exams: "2/8",
+    level: "Advanced",
+    color: "#34d399"
+  },
+];
+
+function CourseCard() {
+  return (
+    <div className="grid md:grid-cols-3 gap-6 p-4">
+      {courses.map((course) => {
+        
+        const radius = 20;
+        const circumference = 2 * Math.PI * radius;
+        const offset =
+          circumference - (course.progress / 100) * circumference;
+
+        return (
+          <div
+            key={course.id}
+            className="bg-[#f6f8ff] border border-blue-100 rounded-3xl p-6 flex flex-col justify-between"
+          >
+            <div className="flex gap-10 items-start">
+              <div className="relative w-12 h-12">
+                <svg className="w-full h-full -rotate-90">
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r={radius}
+                    stroke="#e5e7eb"
+                    strokeWidth="4"
+                    fill="none"
+                  />
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r={radius}
+                    stroke={course.color}
+                    strokeWidth="4"
+                    fill="none"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={offset}
+                    strokeLinecap="round"
+                  />
+                </svg>
+                <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-blue-600">
+                  {course.progress}%
+                </span>
+              </div>
+
+              <div  >
+                <h4 className="font-semibold text-gray-900">
+                  {course.title}
+                </h4>
+                <p className="text-sm text-gray-500">
+                  {course.instructor}
+                </p>
+              </div>
             </div>
-        </div>
-    )
+
+            <div className="mt-4 flex justify-end text-xs text-gray-600 gap-8">
+              <div>
+                <p>{course.lessons} Lessons</p>
+                <p>{course.students} Students</p>
+              </div>
+              <div>
+                <p>{course.hours} Hours</p>
+                <p>{course.exams} Exams</p>
+              </div>
+            </div>
+
+            <div className="mt-6 flex items-center justify-between">
+              <p className="text-sm text-gray-700">
+                Level: <span className="font-medium">{course.level}</span>
+              </p>
+
+              <button className="cursor-pointer flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all">
+                Continue <IoMdArrowRoundForward />
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
-export default Card
+export default CourseCard;

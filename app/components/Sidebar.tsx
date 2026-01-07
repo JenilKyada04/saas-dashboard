@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 
 const navItems = [
-  { name: "Dashboard", href: "/", icon: <img src="/img/icon/dashboard.png" alt="" /> },
-  { name: "Courses", href: "/courses", icon: <img src="/img/icon/course.png" alt="" /> },
-  { name: "Students", href: "/students", icon: <img src="/img/icon/student.png" alt="" /> },
-  { name: "Teachers", href: "/teachers", icon: <img src="/img/icon/teacher.png" alt="" /> },
-  { name: "Events", href: "/events", icon: <img src="/img/icon/events.png" alt="" /> },
-  { name: "Exams", href: "/exams", icon: <img src="/img/icon/exam.png" alt="" /> },
-  { name: "Blogs", href: "/blogs", icon: <img src="/img/icon/blog.png" alt="" /> },
-  { name: "Communities", href: "/communities", icon: <img src="/img/icon/comm.png" alt="" /> }
+  { name: "Dashboard", href: "/", icon: "/img/icon/dashboard.png" },
+  { name: "Courses", href: "/courses", icon: "/img/icon/course.png" },
+  { name: "Students", href: "/students", icon: "/img/icon/student.png" },
+  { name: "Teachers", href: "/teachers", icon: "/img/icon/teacher.png" },
+  { name: "Events", href: "/events", icon: "/img/icon/events.png" },
+  { name: "Exams", href: "/exams", icon: "/img/icon/exam.png" },
+  { name: "Blogs", href: "/blogs", icon: "/img/icon/blog.png" },
+  { name: "Communities", href: "/communities", icon: "/img/icon/comm.png" },
 ];
 
 export default function Sidebar() {
@@ -21,6 +21,7 @@ export default function Sidebar() {
 
   return (
     <>
+      {/* Overlay (Mobile) */}
       {open && (
         <div
           className="fixed inset-0 bg-black/40 z-40 md:hidden"
@@ -28,41 +29,48 @@ export default function Sidebar() {
         />
       )}
 
+      {/* Sidebar */}
       <aside
-        className={`fixed md:static z-50 w-64 bg-white h-screen border-r py-8
-        transform transition-transform duration-300
+        className={`fixed md:static z-50 w-64 h-screen bg-white border-r
+        transition-transform duration-300
         ${open ? "translate-x-0" : "-translate-x-full"}
         md:translate-x-0`}
       >
-        <div className="flex flex-col items-center justify-center mb-5">
-          <img src="/img/logo.png" className="w-30" alt="" />
-          <h1 className="text-xl font-bold mb-10 text-blue-600">EDUBOARD</h1>
+        {/* Logo */}
+        <div className="flex flex-col items-center py-8">
+          <img src="/img/logo.png" className="w-16 mb-2" alt="logo" />
+          <h1 className="text-xl font-bold text-blue-600">EDUBOARD</h1>
         </div>
 
-        <nav className="space-y-2 ">
+        {/* Navigation */}
+        <nav className="px-4 space-y-2">
           {navItems.map((item) => {
             const active = pathname === item.href;
+
             return (
-
               <Link
-
                 key={item.name}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`flex items-center font-normal gap-3 px-4 py-2 rounded-lg transition
-                ${active
-                    ? "bg-blue-50 text-blue-600 font-semibold"
-                    : "text-gray-600 hover:bg-gray-100"
-                  }`}
+                className={`relative flex items-center gap-3 px-4 py-3 rounded-lg
+                transition-all
+                ${
+                  active
+                    ? "bg-gray-100 text-blue-600 font-semibold"
+                    : "text-gray-600 hover:bg-gray-50"
+                }`}
               >
-                {item.icon}
-                {item.name}
+                {/* Active Left Indicator */}
+                {active && (
+                  <span className="absolute left-0 top-2 bottom-2 w-1 bg-blue-600 rounded-r-md" />
+                )}
 
+                <img src={item.icon} className="w-5 h-5" alt="" />
+                <span>{item.name}</span>
               </Link>
             );
           })}
         </nav>
-
       </aside>
     </>
   );
