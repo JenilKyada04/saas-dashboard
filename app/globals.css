@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.white-blue{
+  background-color: #F7F8FF;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

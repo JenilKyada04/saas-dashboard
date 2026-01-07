@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 
 const navItems = [
-  { name: "Dashboard", href: "/", icon: "<img src='/img/icon/dashboard.png' className='w-5 h-5' alt='Dashboard' />" },
-  { name: "Courses", href: "/courses", },
-  { name: "Students", href: "/students", },
-  { name: "Teachers", href: "/teachers", },
-  { name: "Events", href: "/events", },
-  { name: "Exams", href: "/exams", },
-  { name: "Blogs", href: "/blogs", },
-  { name: "Communities", href: "/communities", }
+  { name: "Dashboard", href: "/", icon: <img src="/img/icon/dashboard.png" alt="" /> },
+  { name: "Courses", href: "/courses", icon: <img src="/img/icon/course.png" alt="" /> },
+  { name: "Students", href: "/students", icon: <img src="/img/icon/student.png" alt="" /> },
+  { name: "Teachers", href: "/teachers", icon: <img src="/img/icon/teacher.png" alt="" /> },
+  { name: "Events", href: "/events", icon: <img src="/img/icon/event.png" alt="" /> },
+  { name: "Exams", href: "/exams", icon: <img src="/img/icon/exam.png" alt="" /> },
+  { name: "Blogs", href: "/blogs", icon: <img src="/img/icon/blog.png" alt="" /> },
+  { name: "Communities", href: "/communities", icon: <img src="/img/icon/comm.png" alt="" /> }
 ];
 
 export default function Sidebar() {
@@ -54,10 +54,10 @@ export default function Sidebar() {
                     ? "bg-blue-50 text-blue-600 font-semibold"
                     : "text-gray-600 hover:bg-gray-100"
                   }`}
-              >   
-              {item.icon}
+              >
+                {item.icon}
                 {item.name}
-                
+
               </Link>
             );
           })}

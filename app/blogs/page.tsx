@@ -1,5 +1,7 @@
 export default function CoursesPage() {
   return (
-      <h1 className="text-2xl font-semibold">blog page</h1>
+    <div className="p-6">
+      <h2 className="text-xl font-semibold">blog page</h2>
+    </div>
   );
 }

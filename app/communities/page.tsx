@@ -1,8 +1,9 @@
 
 export default function page() {
   return (
-    <div>
-      <h1>communities   </h1>
+   
+    <div className="p-6">
+      <h2 className="text-xl font-semibold">communities</h2>
     </div>
   )
 }

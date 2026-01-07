@@ -9,11 +9,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-100">
+      <body>
         <SidebarProvider>
           <DashboardLayout>
-            {children}
-            </DashboardLayout>
+            <div className="white-blue">
+              {children}
+            </div>
+          </DashboardLayout>
         </SidebarProvider>
       </body>
     </html>

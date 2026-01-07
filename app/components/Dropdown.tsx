@@ -27,9 +27,10 @@ export function Dropdown() {
                 <DropdownMenuLabel>Language</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-                    <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="top"> English</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="bottom"> <img src="/img/flag/Deutsch.png" className="w-8" alt="" /> Deutsch</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="right">Spanish</DropdownMenuRadioItem>
+                     <DropdownMenuRadioItem value="right">French</DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
             </DropdownMenuContent>
         </DropdownMenu>
