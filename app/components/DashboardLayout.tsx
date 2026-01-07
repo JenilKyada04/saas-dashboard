@@ -1,6 +1,7 @@
 "use client";
 
 import Sidebar from "../components/Sidebar";
+import Footer from "./Footer";
 import Header from "./Navbar";
 
 import React from 'react'
@@ -15,8 +16,8 @@ function DashboardLayout({
        <Sidebar />
        <main className="flex-1 p-6 space-y-6">
          <Header />
-        
-         {children}
+          {children}
+         <Footer />
        </main>
      </div>
   )

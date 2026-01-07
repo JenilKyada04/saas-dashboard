@@ -13,7 +13,7 @@ export default function RootLayout({
         <SidebarProvider>
           <DashboardLayout>
             {children}
-          </DashboardLayout>
+            </DashboardLayout>
         </SidebarProvider>
       </body>
     </html>
