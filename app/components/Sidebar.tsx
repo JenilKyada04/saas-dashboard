@@ -9,7 +9,7 @@ const navItems = [
   { name: "Courses", href: "/courses", icon: <img src="/img/icon/course.png" alt="" /> },
   { name: "Students", href: "/students", icon: <img src="/img/icon/student.png" alt="" /> },
   { name: "Teachers", href: "/teachers", icon: <img src="/img/icon/teacher.png" alt="" /> },
-  { name: "Events", href: "/events", icon: <img src="/img/icon/event.png" alt="" /> },
+  { name: "Events", href: "/events", icon: <img src="/img/icon/events.png" alt="" /> },
   { name: "Exams", href: "/exams", icon: <img src="/img/icon/exam.png" alt="" /> },
   { name: "Blogs", href: "/blogs", icon: <img src="/img/icon/blog.png" alt="" /> },
   { name: "Communities", href: "/communities", icon: <img src="/img/icon/comm.png" alt="" /> }
@@ -29,7 +29,7 @@ export default function Sidebar() {
       )}
 
       <aside
-        className={`fixed md:static z-50 w-64 bg-white h-screen border-r px-6 py-8
+        className={`fixed md:static z-50 w-64 bg-white h-screen border-r py-8
         transform transition-transform duration-300
         ${open ? "translate-x-0" : "-translate-x-full"}
         md:translate-x-0`}
@@ -39,7 +39,7 @@ export default function Sidebar() {
           <h1 className="text-xl font-bold mb-10 text-blue-600">EDUBOARD</h1>
         </div>
 
-        <nav className="space-y-2">
+        <nav className="space-y-2 ">
           {navItems.map((item) => {
             const active = pathname === item.href;
             return (
@@ -49,8 +49,8 @@ export default function Sidebar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`flex items-center gap-3 px-4 py-2 rounded-lg transition
-                  ${active
+                className={`flex items-center font-normal gap-3 px-4 py-2 rounded-lg transition
+                ${active
                     ? "bg-blue-50 text-blue-600 font-semibold"
                     : "text-gray-600 hover:bg-gray-100"
                   }`}
