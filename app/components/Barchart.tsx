@@ -36,7 +36,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function Chart() {
+export function Barchart() {
   return (
     <Card>
       <CardHeader>

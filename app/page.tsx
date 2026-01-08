@@ -1,12 +1,16 @@
-import { Chart } from "./components/Chart";
+import { Linechart } from "./components/Linechart";
+import { Barchart } from "./components/Barchart";
 import Card from "./components/DashboardCard";
 import { Dropdownweekly } from "./components/Dropdownweekly";
 import Reminderscard from "./components/Reminders";
+import { HiDotsVertical } from "react-icons/hi";
+import Topteacherscard from "./components/Topteachers";
 
 export default function DashboardPage() {
   return (
     <>
       <div className="p-6">
+
         <h2 className="text-xl font-semibold">Hello, Antonio</h2>
 
         <div className="mt-6 p-4 bg-white rounded-lg shadow">
@@ -17,23 +21,37 @@ export default function DashboardPage() {
         </div>
 
         <div className="flex justify-between gap-4 mt-10">
-
-            <div className=" bg-white w-3/4 p-5" >
+            <div className=" bg-white w-2/4  p-5" >
               <div className="flex justify-between items-center ">
-                <h2 className="font-semibold">Study Statistics</h2>
+                <h2 className="font-semibold ">Study Statistics</h2>
                 <h1 > <Dropdownweekly /> </h1>
               </div>
               <h4 className="font-normal text-[14px]">December 03, 2022</h4>
               <div className="mt-5">
-                <Chart />
+                <Barchart />
               </div>
             </div>
-
-            <div className=" bg-white w-1/4">
+            <div className="bg-white w-1/4">
               <Reminderscard />
             </div>
-
         </div>
+
+        <div className="flex justify-between gap-4 mt-10">
+            <div className=" bg-white w-2/4 p-5" >
+              <div className="flex justify-between items-center ">
+                <h2 className="font-semibold ">Improvement Graph <span className="font-light">(Overall vs Actual)</span> </h2>
+                <h1 className="cursor-pointer" > <HiDotsVertical /> </h1>
+              </div>
+              <div className="mt-5">
+                <Linechart />
+              </div>
+            </div>
+            <div className=" bg-white w-1/4">
+              <Topteacherscard />
+            </div>
+        </div>
+
+
 
       </div>
 

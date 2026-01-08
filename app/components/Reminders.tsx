@@ -11,7 +11,7 @@ function Reminders() {
                         <h6 className='text-blue-600 cursor-pointer'>See All</h6>
                     </div>
                 </div>
-                <div className=' mt-5'>
+                <div className='mt-5'>
                     <Reminderscard />
                     <Reminderscard />
                     <Reminderscard />
