@@ -4,7 +4,7 @@ import Card from "./components/DashboardCard";
 import { Dropdownweekly } from "./components/Dropdownweekly";
 import Reminderscard from "./components/Reminders";
 import { HiDotsVertical } from "react-icons/hi";
-import Topteacherscard from "./components/Topteachers";
+import Topteachers from "./components/Topteachers";
 
 export default function DashboardPage() {
   return (
@@ -47,7 +47,7 @@ export default function DashboardPage() {
               </div>
             </div>
             <div className=" bg-white w-1/4">
-              <Topteacherscard />
+              <Topteachers />
             </div>
         </div>
 

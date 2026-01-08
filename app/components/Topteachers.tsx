@@ -1,4 +1,4 @@
-import React from 'react'
+import Topteacherscard from "./Topteacherscard"
 
 function Topteachers() {
   return (
@@ -13,6 +13,7 @@ function Topteachers() {
                     </div>
                 </div>
                 <div className='mt-5'>
+                  <Topteacherscard />
                 </div>
 
             </div>
