@@ -6,7 +6,7 @@ import { Dropdown } from "./Dropdown";
 
 function NavCard() {
     return (
-        <div className="flex items-center gap-4  ">
+        <div className="flex  items-center gap-4  ">
             <div className="relative hidden sm:block">
                 <FiSearch className="absolute top-2.5 left-3 text-gray-400" />
                 <input

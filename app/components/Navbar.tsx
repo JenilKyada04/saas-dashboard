@@ -9,7 +9,7 @@ export default function Header() {
     const { setOpen } = useSidebar();
 
     return (
-        <div className="flex  justify-between items-center bg-white px-2 md:px-6 py-4 rounded-xl">
+        <div className="flex justify-between items-center bg-white px-2 md:px-6 py-4 rounded-xl">
             <div className="flex items-center gap-3">
                 <button
                     onClick={() => setOpen(true)}
@@ -22,6 +22,7 @@ export default function Header() {
             </div>
 
             <Navright />
+            
         </div>
     );
 }
