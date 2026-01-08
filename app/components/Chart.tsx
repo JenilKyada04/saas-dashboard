@@ -10,13 +10,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/ui/card"
+} from "@/components2/ui/card"
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "@/app/ui/chart"
+} from "@/components2/ui/chart"
 
 export const description = "A bar chart"
 
@@ -57,7 +57,7 @@ export function Chart() {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" className="bg-blue cursor-pointer" radius={8} />
+            <Bar dataKey="desktop" fill="var(--color-desktop)" className="bg-blue cursor-pointer " radius={8} />
           </BarChart>
         </ChartContainer>
       </CardContent>
