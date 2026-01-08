@@ -1,15 +1,13 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
+import { HiDotsVertical } from "react-icons/hi";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
-
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
+    CardDescription,
 } from "@/components2/ui/card"
 import {
     ChartContainer,
@@ -18,77 +16,69 @@ import {
     type ChartConfig,
 } from "@/components2/ui/chart"
 
-export const description = "A multiple line chart"
-
 const chartData = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
-    { month: "January", desktop: 186, mobile: 80 },
-
+    { day: "Mon", overall: 30000, actual: 15000 },
+    { day: "Tue", overall: 55000, actual: 25000 },
+    { day: "Wed", overall: 42000, actual: 45000 },
+    { day: "Thu", overall: 60000, actual: 35000 },
+    { day: "Fri", overall: 50000, actual: 52000 },
+    { day: "Sat", overall: 90000, actual: 80000 },
+    { day: "Sun", overall: 110000, actual: 105000 },
 ]
 
 const chartConfig = {
-    desktop: {
-        label: "Desktop",
-        color: "var(--chart-1)",
-    },
-    mobile: {
-        label: "Mobile",
-        color: "var(--chart-2)",
-    },
+    overall: { label: "Overall", color: "#9ec5ff" },
+    actual: { label: "Actual", color: "#000000" },
 } satisfies ChartConfig
 
 export function Linechart() {
     return (
-        <Card>
+        <Card className="rounded-2xl shadow-sm">
 
-            <CardContent>
+            <CardHeader className="pb-0">
+                <div className="flex items-start justify-between">
+                    <div className="flex  items-center gap-2">
+                        <CardTitle className="text-base font-semibold">
+                            Improvement Graph
+                        </CardTitle>
+                        <CardDescription className="text-sm">
+                            Overall vs Actual
+                        </CardDescription>
+                    </div>
+
+                    <HiDotsVertical className="text-gray-500 cursor-pointer mt-1" />
+                </div>
+            </CardHeader>
+
+
+            <CardContent className="pt-4">
                 <ChartContainer config={chartConfig}>
-                    <LineChart
-                        accessibilityLayer
-                        data={chartData}
-                        margin={{
-                            left: 12,
-                            right: 12,
-                        }}
-                    >
-                        <CartesianGrid vertical={false} />
+                    <LineChart data={chartData}>
+                        <CartesianGrid vertical={false} stroke="#f1f1f1" />
                         <XAxis
-                            dataKey="month"
+                            dataKey="day"
                             tickLine={false}
                             axisLine={false}
-                            tickMargin={8}
-                            tickFormatter={(value) => value.slice(0, 3)}
                         />
-                        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                        <ChartTooltip content={<ChartTooltipContent />} />
+
                         <Line
-                            dataKey="desktop"
                             type="monotone"
-                            stroke="var(--color-desktop)"
-                            strokeWidth={2}
+                            dataKey="overall"
+                            stroke="#9ec5ff"
+                            strokeWidth={3}
                             dot={false}
                         />
                         <Line
-                            dataKey="mobile"
                             type="monotone"
-                            stroke="var(--color-mobile)"
-                            strokeWidth={2}
+                            dataKey="actual"
+                            stroke="#000"
+                            strokeWidth={3}
                             dot={false}
                         />
                     </LineChart>
                 </ChartContainer>
             </CardContent>
-
         </Card>
     )
 }

@@ -1,19 +1,20 @@
-import React from 'react'
-import { MdArrowForwardIos } from "react-icons/md";
-
+import { MdArrowForwardIos } from "react-icons/md"
 
 function Reminderscard() {
-    return (
-        <div className='  w-full rounded-lg '>
-            <div className="white-blue  cursor-pointer m-4.5 rounded-2xl p-3 flex items-center justify-between">
-                <div>
-                    <h1>Attend Zoom call (UI Design)</h1>
-                    <h5 className="text-sm font-light">27 march, 2023</h5>
-                </div>
-                <div className="cursor-pointer " ><MdArrowForwardIos /></div>
-            </div>
-        </div>
-    )
+  return (
+    <div className="bg-blue-50 hover:bg-blue-100 transition rounded-xl px-4 py-3 flex items-center justify-between cursor-pointer">
+      <div>
+        <h4 className="text-sm font-medium">
+          Attend Zoom call (UI Design)
+        </h4>
+        <p className="text-xs text-gray-500">
+          27 March, 2023
+        </p>
+      </div>
+
+      <MdArrowForwardIos className="text-gray-400 text-sm" />
+    </div>
+  )
 }
 
 export default Reminderscard

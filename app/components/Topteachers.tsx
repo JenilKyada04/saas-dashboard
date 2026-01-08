@@ -2,22 +2,18 @@ import Topteacherscard from "./Topteacherscard"
 
 function Topteachers() {
   return (
-    <div>
-      <>
-            <div>
+    <div className="bg-white rounded-2xl shadow-sm p-4">
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center gap-3">
+          <span className="w-1 h-6 bg-blue-600 rounded-full" />
+          <h2 className="font-semibold text-sm">Top Teachers</h2>
+        </div>
+        <span className="text-blue-600 text-sm cursor-pointer">
+          See All
+        </span>
+      </div>
 
-                <div className='bg-white text-black mt-4  mr-5  '>
-                    <div className='  flex  justify-between  '>
-                        <h1 className="font-semibold  left-0 top-2 bottom-2 w-1 bg-blue-600 rounded-r-md" ><span className="pl-5 ">Teachers</span></h1>
-                        <h6 className='text-blue-600 cursor-pointer'>See All</h6>
-                    </div>
-                </div>
-                <div className='mt-5'>
-                  <Topteacherscard />
-                </div>
-
-            </div>
-        </>
+      <Topteacherscard />
     </div>
   )
 }

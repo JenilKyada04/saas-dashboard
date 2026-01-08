@@ -1,13 +1,9 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components2/ui/card"
@@ -15,55 +11,53 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig,
 } from "@/components2/ui/chart"
-
-export const description = "A bar chart"
+import { Dropdownweekly } from "./Dropdownweekly"
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
-   { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 90 },
-  { month: "May", desktop: 209 },
-  
+  { day: "12", value: 5 },
+  { day: "13", value: 4 },
+  { day: "14", value: 2 },
+  { day: "15", value: 4 },
+  { day: "16", value: 8 },
+  { day: "17", value: 6 },
+  { day: "18", value: 7 },
+  { day: "19", value: 9 },
+  { day: "20", value: 7 },
+  { day: "21", value: 6 },
+  { day: "22", value: 6 },
 ]
-
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "#0000FF",
-  },
-} satisfies ChartConfig
 
 export function Barchart() {
   return (
-    <Card>
-      <CardHeader>
-        
+    <Card className="rounded-2xl">
+      <CardHeader className="flex flex-row items-center justify-between">
+        <div>
+          <CardTitle className="text-lg font-semibold">
+            Study Statistics
+          </CardTitle>
+          <p className="text-sm text-muted-foreground">
+            December 03, 2022
+          </p>
+        </div>
+
+        <div className="text-sm px-3 py-1   rounded-md">
+          <Dropdownweekly />
+        </div>
       </CardHeader>
+
       <CardContent>
-        <ChartContainer config={chartConfig}>
-          <BarChart accessibilityLayer data={chartData}>
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
+        <ChartContainer config={{ value: { color: "#2563eb" } }}>
+          <BarChart data={chartData}>
+            <CartesianGrid vertical={false} strokeDasharray="3 3" />
+            <XAxis dataKey="day" axisLine={false} tickLine={false} />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Bar
+              dataKey="value"
+              radius={8}
+              fill="#2563eb"
+              className="cursor-pointer"
             />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
-            />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" className="bg-blue cursor-pointer " radius={8} />
           </BarChart>
         </ChartContainer>
       </CardContent>

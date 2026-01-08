@@ -5,6 +5,7 @@ import { Dropdownweekly } from "./components/Dropdownweekly";
 import Reminderscard from "./components/Reminders";
 import { HiDotsVertical } from "react-icons/hi";
 import Topteachers from "./components/Topteachers";
+import Reminders from "./components/Reminders";
 
 export default function DashboardPage() {
   return (
@@ -32,47 +33,25 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="flex justify-between gap-4 mt-10">
-          <div className=" bg-white w-2/4" >
-            <div className="flex justify-between items-center ">
-              <h2 className="font-semibold flex gap-1 left-0 top-2 bottom-2 w-1 bg-blue-600 rounded-r-md"> <span className="pl-3" >Study</span>  <span>Statistics</span></h2>
-              <h1 className="m-1" > <Dropdownweekly /> </h1>
-            </div>
-            <h4 className="font-normal text-[14px] pl-3">December 03, 2022</h4>
-            <div className="mt-5 p-5">
-              <Barchart />
-            </div>
+
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 mt-7 gap-6">
+          <div className="lg:col-span-8">
+            <Barchart />
           </div>
-          <div className="bg-white w-1/4">
-            <Reminderscard />
+
+          <div className="lg:col-span-4">
+            <Reminders />
           </div>
         </div>
 
 
-        <div className="flex justify-between gap-4 mt-10">
-
-          <div className=" bg-white w-2/4 " >
-            <div className="flex justify-between pt-3 pr-3 items-center ">
-              <div className="flex">
-                <h2 className="font-semibold  flex  left-0 top-2 bottom-2 w-1 bg-blue-600 rounded-r-md  ">
-                  <span className="pl-3 ">Improvement</span>
-                  <span>Graph</span>
-                </h2>
-                <span className="font-light pl-40">(Overall vs Actual)</span>
-              </div>
-              <h1 className="cursor-pointer" > <HiDotsVertical /> </h1>
-            </div>
-            <div className="mt-1 p-5">
-              <Linechart />
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-7">
+          <div className="lg:col-span-2">
+            <Linechart />
           </div>
-          <div className=" bg-white w-1/4 ">
-            <Topteachers />
-          </div>
-
+          <Topteachers />
         </div>
-
-
 
       </div>
 
