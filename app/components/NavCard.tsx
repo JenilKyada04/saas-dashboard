@@ -4,7 +4,7 @@ import { Dropdown } from "./Dropdown";
 
 
 
-function Navright() {
+function NavCard() {
     return (
         <div className="flex items-center gap-4  ">
             <div className="relative hidden sm:block">
@@ -30,4 +30,4 @@ function Navright() {
     )
 }
 
-export default Navright
+export default NavCard

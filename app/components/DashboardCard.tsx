@@ -12,6 +12,8 @@ const courses = [
     exams: "2/3",
     level: "Intermediate",
     color : "#3b82f6",
+    timer: "img/icon/timer.png",
+    cimg : "img/icon/course.png"
   },
   {
     id: 2,
@@ -41,7 +43,7 @@ const courses = [
 
 function CourseCard() {
   return (
-    <div className="grid md:grid-cols-3 gap-6 p-4">
+    <div className="grid md:grid-cols-3 gap-3 p-4">
       {courses.map((course) => {
         
         const radius = 20;
@@ -52,7 +54,7 @@ function CourseCard() {
         return (
           <div
             key={course.id}
-            className="bg-[#f6f8ff] border border-blue-100 rounded-3xl p-6 flex flex-col justify-between"
+            className="white-blue border border-blue-100 rounded-3xl p-6 flex flex-col justify-between"
           >
             <div className="flex gap-10 items-start">
               <div className="relative w-12 h-12">
@@ -77,12 +79,13 @@ function CourseCard() {
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-blue-600">
+                <span className="absolute inset-0 flex items-center justify-center text-xs font-normal text-black">
                   {course.progress}%
                 </span>
               </div>
 
-              <div  >
+
+              <div >
                 <h4 className="font-semibold text-gray-900">
                   {course.title}
                 </h4>
@@ -92,10 +95,11 @@ function CourseCard() {
               </div>
             </div>
 
-            <div className="mt-4 flex justify-end text-xs text-gray-600 gap-8">
+            <div className="mt-4 flex justify-center  text-xs text-gray-600 gap-8">
+
               <div>
-                <p>{course.lessons} Lessons</p>
-                <p>{course.students} Students</p>
+                <p> {course.lessons} Lessons</p>
+                <p> {course.students} Students</p>
               </div>
               <div>
                 <p>{course.hours} Hours</p>

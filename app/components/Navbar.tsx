@@ -1,6 +1,6 @@
 "use client";
 
-import Navright from "./Navright";
+import Navright from "./NavCard";
 
 import { FiMenu } from "react-icons/fi";
 import { useSidebar } from "../context/SidebarContext";

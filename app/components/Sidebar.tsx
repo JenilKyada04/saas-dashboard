@@ -21,7 +21,6 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Overlay (Mobile) */}
       {open && (
         <div
           className="fixed inset-0 bg-black/40 z-40 md:hidden"
@@ -29,21 +28,18 @@ export default function Sidebar() {
         />
       )}
 
-      {/* Sidebar */}
       <aside
         className={`fixed md:static z-50 w-64 h-screen bg-white border-r
         transition-transform duration-300
         ${open ? "translate-x-0" : "-translate-x-full"}
         md:translate-x-0`}
       >
-        {/* Logo */}
         <div className="flex flex-col items-center py-8">
           <img src="/img/logo.png" className="w-16 mb-2" alt="logo" />
           <h1 className="text-xl font-bold text-blue-600">EDUBOARD</h1>
         </div>
 
-        {/* Navigation */}
-        <nav className="px-4 space-y-2">
+        <nav className=" space-y-2">
           {navItems.map((item) => {
             const active = pathname === item.href;
 
@@ -52,7 +48,7 @@ export default function Sidebar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`relative flex items-center gap-3 px-4 py-3 rounded-lg
+                className={`relative flex items-center gap-3 px-8 py-3 rounded-lg
                 transition-all
                 ${
                   active
@@ -60,7 +56,6 @@ export default function Sidebar() {
                     : "text-gray-600 hover:bg-gray-50"
                 }`}
               >
-                {/* Active Left Indicator */}
                 {active && (
                   <span className="absolute left-0 top-2 bottom-2 w-1 bg-blue-600 rounded-r-md" />
                 )}
