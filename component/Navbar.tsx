@@ -18,7 +18,7 @@ export default function Header() {
                     <FiMenu />
                 </button>
 
-                <h2 className="font-normal  hidden md:block text-black">Dashboard</h2>
+                <h2 className="font-normal  hidden md:block text-black cursor-pointer">Dashboard</h2>
             </div>
 
             <Navright />

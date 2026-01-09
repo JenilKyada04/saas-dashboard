@@ -20,7 +20,7 @@ export function Dropdown() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline"> <img src="/img/flag/eng.png" className="w-6 h-6 rounded-full" alt="" />ENG</Button>
+                <Button variant="outline"> <img src="/img/flag/eng.png" className="w-6 h-6 rounded-full cursor-pointer " alt="" />ENG</Button>
 
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
