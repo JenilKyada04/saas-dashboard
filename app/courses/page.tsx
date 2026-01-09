@@ -1,5 +1,6 @@
 import Subject from '../../component/courses/Subject';
 import AllCourses from '../../component/courses/AllCourses';
+import Coursecard from '@/component/courses/Coursecard';
 
 
 export default function CoursesPage() {
@@ -8,6 +9,7 @@ export default function CoursesPage() {
         <h2 className="text-xl font-semibold">Browse Courses</h2>
         <Subject />
         <AllCourses />
+        <Coursecard/>
     </div>
   );
 }

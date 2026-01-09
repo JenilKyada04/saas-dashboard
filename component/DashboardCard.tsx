@@ -41,7 +41,7 @@ const courses = [
   },
 ];
 
-function CourseCard() {
+function DashboardCard() {
   return (
     <div className="grid md:grid-cols-3 gap-3 p-4">
       {courses.map((course) => {
@@ -123,4 +123,4 @@ function CourseCard() {
   );
 }
 
-export default CourseCard;
+export default DashboardCard;

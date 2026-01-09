@@ -1,5 +1,5 @@
 import "./globals.css";
-import { SidebarProvider } from "./context/SidebarContext";
+import { SidebarProvider } from "../context/SidebarContext";
 import DashboardLayout from "../component/DashboardLayout";
 
 export default function RootLayout({
