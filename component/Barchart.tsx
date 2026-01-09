@@ -6,12 +6,12 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/components2/ui/card"
+} from "@/components/ui/card"
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components2/ui/chart"
+} from "@/components/ui/chart"
 import { Dropdownweekly } from "./Dropdownweekly"
 
 const chartData = [

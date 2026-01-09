@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSidebar } from "../context/SidebarContext";
+import { useSidebar } from "../app/context/SidebarContext";
 
 const navItems = [
   { name: "Dashboard", href: "/", icon: "/img/icon/dashboard.png" },

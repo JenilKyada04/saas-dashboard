@@ -1,6 +1,6 @@
 "use client";
 
-import Sidebar from "../components/Sidebar";
+import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import Header from "./Navbar";
 import React from "react";

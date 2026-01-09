@@ -30,7 +30,7 @@ function SubjectCard() {
         <>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4 ">
                 {subject.map((sub, index) => (
-                    <div className="bg-white rounded-lg flex justify-between shadow items-center">
+                    <div key={index} className="bg-white rounded-lg flex justify-between shadow items-center">
                         <div className='pl-4'>
                             <h6 className="font-medium">{sub.name}</h6>
                             <h6 className='font-light'>{sub.desc}</h6>

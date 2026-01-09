@@ -8,13 +8,13 @@ import {
     CardHeader,
     CardTitle,
     CardDescription,
-} from "@/components2/ui/card"
+} from "@/components/ui/card"
 import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
     type ChartConfig,
-} from "@/components2/ui/chart"
+} from "@/components/ui/chart"
 
 const chartData = [
     { day: "Mon", overall: 30000, actual: 15000 },

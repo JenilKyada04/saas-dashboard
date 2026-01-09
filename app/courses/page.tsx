@@ -1,5 +1,5 @@
-import Subject from '../components/courses/Subject';
-import AllCourses from '../components/courses/AllCourses';
+import Subject from '../../component/courses/Subject';
+import AllCourses from '../../component/courses/AllCourses';
 
 
 export default function CoursesPage() {

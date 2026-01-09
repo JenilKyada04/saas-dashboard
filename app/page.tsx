@@ -1,11 +1,11 @@
-import { Linechart } from "./components/Linechart";
-import { Barchart } from "./components/Barchart";
-import Card from "./components/DashboardCard";
-import { Dropdownweekly } from "./components/Dropdownweekly";
-import Reminderscard from "./components/Reminders";
+import { Linechart } from "../component/Linechart";
+import { Barchart } from "../component/Barchart";
+import Card from "../component/DashboardCard";
+import { Dropdownweekly } from "../component/Dropdownweekly";
+import Reminderscard from "../component/Reminders";
 import { HiDotsVertical } from "react-icons/hi";
-import Topteachers from "./components/Topteachers";
-import Reminders from "./components/Reminders";
+import Topteachers from "../component/Topteachers";
+import Reminders from "../component/Reminders";
 
 export default function DashboardPage() {
   return (

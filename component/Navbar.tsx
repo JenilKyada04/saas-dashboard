@@ -3,7 +3,7 @@
 import Navright from "./NavCard";
 
 import { FiMenu } from "react-icons/fi";
-import { useSidebar } from "../context/SidebarContext";
+import { useSidebar } from "../app/context/SidebarContext";
 
 export default function Header() {
     const { setOpen } = useSidebar();

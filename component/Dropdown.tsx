@@ -2,7 +2,7 @@
 
 import { IoIosArrowDown } from "react-icons/io";
 import * as React from "react"
-import { Button } from "@/components2/ui/button"
+import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 
-} from "@/components2/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 
 export function Dropdown() {
     const [position, setPosition] = React.useState("bottom")
