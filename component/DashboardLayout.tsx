@@ -19,7 +19,7 @@ function DashboardLayout({
           <Header />
         </header>
 
-        <main className="mt-16 flex-1 overflow-y-auto p-6">
+        <main className="mt-16 flex-1 overflow-y-auto ">
           {children}
 
           <Footer />

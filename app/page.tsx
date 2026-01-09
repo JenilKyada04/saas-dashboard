@@ -1,9 +1,6 @@
 import { Linechart } from "../component/Linechart";
 import { Barchart } from "../component/Barchart";
 import Card from "../component/DashboardCard";
-import { Dropdownweekly } from "../component/Dropdownweekly";
-import Reminderscard from "../component/Reminders";
-import { HiDotsVertical } from "react-icons/hi";
 import Topteachers from "../component/Topteachers";
 import Reminders from "../component/Reminders";
 
