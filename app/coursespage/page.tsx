@@ -1,19 +1,12 @@
-import React from 'react'
+import Banner from "@/component/courseDetails/Banner";
+import React from "react";
 
-function page() {
+export default function Page() {
     return (
         <>
-            <div className=''>
-                    <img src="/img/coursesimg.png" className='w-full ' alt="" />
-                    <div className=''>
-                        <img src="/img/icon/play.png" className='' alt="" />
-                        <img src="/img/icon/ring1.png" alt="" />
-                        <img src="/img/icon/ring3.png" alt="" />
-                        <img src="/img/icon/ring2.png" alt="" />
-                    </div>
+            <div className="relative w-full overflow-hidden ">
+                <Banner />
             </div>
         </>
-    )
+    );
 }
-
-export default page

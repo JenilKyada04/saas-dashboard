@@ -1,33 +1,30 @@
-"use client"
+"use client";
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
 
-function valuetext(value: number) {
-    return `${value}°C`;
-}
+export default function Pricerange() {
+  const [value, setValue] = React.useState<number[]>([0, 5000]);
 
-export default function RangeSlider() {
-    const [value, setValue] = React.useState<number[]>([20, 37]);
+  const handleChange = (event: Event, newValue: number[]) => {
+    setValue(newValue);
+  };
 
-    const handleChange = (event: Event, newValue: number[]) => {
-        setValue(newValue);
-    };
+  return (
+    <Box sx={{ width: "100%" }}>
+      <Slider
+        value={value}
+        onChange={handleChange}
+        min={0}
+        max={5000}
+        valueLabelDisplay="auto"
+      />
 
-    return (
-        <Box sx={{ width: 300 }}>
-            <Slider
-                getAriaLabel={() => 'Temperature range'}
-                value={value}
-                onChange={handleChange}
-                valueLabelDisplay="auto"
-                getAriaValueText={valuetext}
-            />
-            <div className="flex items-center justify-between">
-                <p>$0</p>
-                <p>$5000</p>
-            </div>
-        </Box>
-    );
+      <div className="flex justify-between text-sm text-gray-500">
+        <span>$0</span>
+        <span>$5000</span>
+      </div>
+    </Box>
+  );
 }

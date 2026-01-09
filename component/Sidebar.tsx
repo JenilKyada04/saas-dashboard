@@ -30,16 +30,18 @@ export default function Sidebar() {
 
       <aside
         className={`fixed top-0 left-0 z-50 w-64 h-screen bg-white border-r
-  transition-transform duration-300
+        transition-transform duration-300
         ${open ? "translate-x-0" : "-translate-x-full"}
-        md:translate-x-0`}
+        md:translate-x-0 flex flex-col`}
       >
+        {/* Logo */}
         <div className="flex flex-col items-center py-8">
           <img src="/img/logo.png" className="w-16 mb-2" alt="logo" />
           <h1 className="text-xl font-bold text-blue-600">EDUBOARD</h1>
         </div>
 
-        <nav className=" space-y-2">
+        {/* Navigation */}
+        <nav className="flex-1 space-y-2">
           {navItems.map((item) => {
             const active = pathname === item.href;
 
@@ -48,24 +50,35 @@ export default function Sidebar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`relative flex items-center gap-3 px-8 py-3 rounded-lg
-                transition-all
-                ${
-                  active
-                    ? "bg-gray-100 text-blue-600 font-semibold"
-                    : "text-gray-600 hover:bg-gray-50"
-                }`}
+                className={`relative flex items-center gap-3 px-8 py-3 rounded-lg transition-all
+                  ${
+                    active
+                      ? "bg-gray-100 text-blue-600 font-semibold"
+                      : "text-gray-600 hover:bg-gray-50"
+                  }`}
               >
                 {active && (
                   <span className="absolute left-0 top-2 bottom-2 w-1 bg-blue-600 rounded-r-md" />
                 )}
-
                 <img src={item.icon} className="w-5 h-5" alt="" />
                 <span>{item.name}</span>
               </Link>
             );
           })}
         </nav>
+
+        {/* Bottom Buttons */}
+        <div className="px-8 pb-6 space-y-3">
+          <button className="flex items-center gap-3 text-gray-600 hover:text-blue-600">
+            <img src="/img/icon/support.png" className="w-5 h-5" alt="" />
+            <span>Support</span>
+          </button>
+
+          <button className="flex items-center gap-3 text-gray-600 hover:text-red-500">
+            <img src="/img/icon/logout.png" className="w-5 h-5" alt="" />
+            <span>Log Out</span>
+          </button>
+        </div>
       </aside>
     </>
   );
