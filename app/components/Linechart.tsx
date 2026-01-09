@@ -36,12 +36,12 @@ export function Linechart() {
         <Card className="rounded-2xl shadow-sm">
 
             <CardHeader className="pb-0">
-                <div className="flex items-start justify-between">
+                <div className="flex items-start justify-between ">
                     <div className="flex  items-center gap-2">
-                        <CardTitle className="text-base font-semibold">
+                        <CardTitle className="text-base font-semibold 2xl:text-lg">
                             Improvement Graph
                         </CardTitle>
-                        <CardDescription className="text-sm">
+                        <CardDescription className="text-sm 2xl:text-lg">
                             Overall vs Actual
                         </CardDescription>
                     </div>

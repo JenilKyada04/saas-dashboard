@@ -13,11 +13,11 @@ const teachers = [
 
 function Topteacherscard() {
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 ">
       {teachers.map((teacher, index) => (
         <div
           key={index}
-          className="flex items-center justify-between hover:bg-gray-50 rounded-xl p-0.75 cursor-pointer"
+          className="flex items-center justify-between hover:bg-gray-50 rounded-xl 2xl:p-3 p-0.70 cursor-pointer"
         >
           <div className="flex items-center gap-3">
             <img
