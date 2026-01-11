@@ -13,6 +13,7 @@ export default function CoursesPage() {
         <AllCourses />
         <Link href={"coursespage"}>
           <Coursecard />
+          <Coursecard />
         </Link>
       </div>
     </>
