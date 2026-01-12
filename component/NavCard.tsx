@@ -12,20 +12,9 @@ function NavCard() {
                 <input
                     type="text"
                     placeholder="Search"
-                    className="
-                    cursor-pointer
-                    w-56
-                    pl-10 pr-4 py-2
-                    text-sm
-                    rounded-xl
-                    bg-blue-50
-                    border border-transparent
-                    placeholder-gray-400
-                    transition-all duration-200
-                    focus:outline-none
-                    focus:bg-white
-                    focus:border-blue-500
-                    focus:ring-2 focus:ring-blue-100
+                    className=" cursor-pointer w-66 pl-10 pr-4 py-2 text-sm
+                    rounded-xl bg-blue-50  border border-transparent  placeholder-gray-400 transition-all duration-200
+                    focus:outline-none   focus:bg-white  focus:border-blue-500   focus:ring-2 focus:ring-blue-100
                     hover:bg-blue-100
                 "
                 />

@@ -18,12 +18,12 @@ export function Dropdown() {
     const [position, setPosition] = React.useState("bottom")
 
     return (
-        <DropdownMenu>
+        <DropdownMenu >
             <DropdownMenuTrigger asChild>
                 <Button variant="outline"> <img src="/img/flag/eng.png" className="w-6 h-6 rounded-full cursor-pointer " alt="" />ENG</Button>
 
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-56 cursor-pointer">
                 <DropdownMenuLabel>Language</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>

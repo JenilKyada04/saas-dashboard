@@ -7,14 +7,12 @@ import Link from 'next/link';
 export default function CoursesPage() {
   return (
     <>
-      <div className="p-6 white-blue">
+      <div className="md:p-6 p-3 white-blue mt-3 md:mt-0">
         <h2 className="text-xl font-semibold ">Browse Courses</h2>
         <Subject />
         <AllCourses />
-        <Link href={"coursespage"}>
           <Coursecard />
           <Coursecard />
-        </Link>
       </div>
     </>
   );

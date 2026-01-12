@@ -40,7 +40,7 @@ function SubjectCard() {
               </p>
             </div>
   
-            <div className="flex items-center justify-center w-19 h-19 rounded-lg bg-blue-100">
+            <div className="flex items-center justify-center w-19 h-19 rounded-lg white-blue">
               <img src={sub.img} alt={sub.name} className="w-6 h-6" />
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 
 const uiuxcourse = [
   {
@@ -36,50 +37,55 @@ const uiuxcourse = [
     popular: true,
   },
 ]
+const handalclick = () => {
+  console.log("clicked");
+}
 
 function Coursecard() {
-  return (
+  return (<>
     <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
       {uiuxcourse.map((course, index) => (
         <div
           key={index}
           className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg transition"
         >
-          <div className="relative overflow-hidden rounded-xl">
-            {course.popular && (
-              <span className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-full z-10">
-                Most Popular
-              </span>
-            )}
+          <Link href={"coursespage  "}>
+            <div className="relative overflow-hidden rounded-xl">
+              {course.popular && (
+                <span className="absolute top-3 right-3 text-blue-600 bg-white text-xs font-medium px-3 py-1 rounded-full z-10">
+                  Most Popular
+                </span>
+              )}
 
-            <img
-              src={course.img}
-              alt=""
-              className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-
-          <div className="mt-4 space-y-2">
-            <div className="flex justify-between text-xs text-gray-500">
-              <span>{course.students}</span>
-              <span>{course.hours}</span>
+              <img
+                src={course.img}
+                alt=""
+                className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
+              />
             </div>
 
-            <h5 className="text-[17px] font-semibold leading-snug text-gray-900">
-              {course.title}
-            </h5>
+            <div className="mt-4 space-y-2">
+              <div className="flex justify-between text-xs text-gray-500">
+                <span>{course.students}</span>
+                <span>{course.hours}</span>
+              </div>
 
-            <p className="text-sm text-gray-600">
-              {course.instructors}
-            </p>
-          </div>
+              <h5 className="text-[17px] font-semibold leading-snug text-gray-900">
+                {course.title}
+              </h5>
 
-          <div className="flex items-center gap-1 mt-3">
-            <img src="/img/star.png" className="w-4 h-4" alt="" />
-            <span className="text-sm text-gray-700">
-              {course.ratingText}
-            </span>
-          </div>
+              <p className="text-sm text-gray-600">
+                {course.instructors}
+              </p>
+            </div>
+
+          </Link>
+            <div className="flex items-center gap-1 mt-3">
+              <img src="/img/star.png" className="w-4 h-4" alt="" />
+              <span className="text-sm text-gray-700">
+                {course.ratingText}
+              </span>
+            </div>
 
           <div className="flex items-center justify-between mt-4">
             <div className="flex items-center gap-1 text-xs text-gray-600">
@@ -91,14 +97,16 @@ function Coursecard() {
             </div>
 
             <img
-              src="/img/icon/savebtn.png"
-              className="w-4 h-4 cursor-pointer"
+              src="/img/icon/savebtn.svg"
+              className="w-4 h-4 cursor-pointer "
               alt=""
-            />
+              // onClick={handalclick}
+              />
           </div>
         </div>
       ))}
     </div>
+  </>
   )
 }
 

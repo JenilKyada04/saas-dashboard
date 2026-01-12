@@ -14,7 +14,7 @@ const courses = [
     level: "Intermediate",
     color : "#3b82f6",
     timer: "img/icon/timer.png",
-    cimg : "img/icon/course.png"
+    cimg : "/img/icon/course.png"
   },
   {
     id: 2,
@@ -99,7 +99,7 @@ function DashboardCard() {
             <div className="mt-4 flex justify-center  text-xs text-gray-600 gap-8">
 
               <div>
-                <p>{course.cimg} {course.lessons} Lessons</p>
+                <p> {course.lessons} Lessons</p>
                 <p> {course.students} Students</p>
               </div>
               <div>
