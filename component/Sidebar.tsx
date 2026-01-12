@@ -89,7 +89,9 @@ export default function Sidebar() {
 
           <button className="group flex items-center gap-3 text-gray-600
             transition-all duration-300
-            hover:text-red-500 hover:translate-x-1">
+            hover:text-red-500 hover:translate-x-1 cursor-pointer"
+             onClick={() => window.location.href = "https://www.google.com"}
+             >
             <img
               src="/img/icon/logout.png"
               className="w-5 h-5 transition-transform group-hover:scale-110"

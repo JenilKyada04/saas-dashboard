@@ -5,6 +5,7 @@ import Link from "next/link"
 
 const uiuxcourse = [
   {
+    id: 1,
     img: "/img/course/uiux1.jpg",
     students: "5,496 students",
     hours: "80 hrs/month",
@@ -16,6 +17,7 @@ const uiuxcourse = [
     duration: "4-6 Months",
   },
   {
+    id: 2,
     img: "/img/course/uiux2.jpg",
     students: "1,516 students",
     hours: "80 hrs/month",
@@ -27,6 +29,7 @@ const uiuxcourse = [
     duration: "4-6 Months",
   },
   {
+    id: 3,
     img: "/img/course/uiux3.png",
     students: "12,586 students",
     hours: "80 hrs/month",
@@ -41,51 +44,49 @@ const uiuxcourse = [
 ]
 
 function Coursecard() {
-  const [isSaved, setIsSaved] = useState(false);
+  const [savedCourses, setSavedCourses] = useState<number[]>([]);
 
-
-  const handalclick = () => {
-    setIsSaved(!isSaved);
+  const handleClick = (courseId: number) => {
+    setSavedCourses(p =>
+      p.includes(courseId) ? p.filter(id => id !== courseId) : [...p , courseId]
+    );
   }
+
   return (
     <>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
-        {uiuxcourse.map((course, index) => (
+        {uiuxcourse.map((course) => (
           <div
-            key={index}
+            key={course.id}
             className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg transition"
           >
-            <Link href={"coursespage  "}>
+            <Link href={"coursespage"}>
               <div className="relative overflow-hidden rounded-xl">
                 {course.popular && (
                   <span className="absolute top-3 right-3 text-blue-600 bg-white text-xs font-medium px-3 py-1 rounded-full z-10">
                     Most Popular
                   </span>
-                )}
-
+                )}  
                 <img
                   src={course.img}
                   alt=""
                   className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
-
               <div className="mt-4 space-y-2">
                 <div className="flex justify-between text-xs text-gray-500">
                   <span>{course.students}</span>
                   <span>{course.hours}</span>
                 </div>
-
                 <h5 className="text-[17px] font-semibold leading-snug text-gray-900">
                   {course.title}
                 </h5>
-
                 <p className="text-sm text-gray-600">
                   {course.instructors}
                 </p>
               </div>
-
             </Link>
+
             <div className="flex items-center gap-1 mt-3">
               <img src="/img/star.png" className="w-4 h-4" alt="" />
               <span className="text-sm text-gray-700">
@@ -102,26 +103,22 @@ function Coursecard() {
                 <span>{course.duration}</span>
               </div>
 
-              {/* <img src="/img/icon/savebtn.svg"
-                className="w-4 h-4 cursor-pointer "
-                alt=""/> */}
 
-              <button onClick={handalclick} className="rounded-xl p-1" >
-                {isSaved ? (
+              <button onClick={() => handleClick(course.id)} className="rounded-xl p-1">
+                {savedCourses.includes(course.id) ? (
                   <img
-                    src="/img/icon/bookmark.svg "
-                    className="w-4 h-4 cursor-pointer "
+                    src="/img/icon/bookmark.svg"
+                    className="w-4 h-4 cursor-pointer"
                     alt=""
                   />
                 ) : (
-                  <img src="/img/icon/savebtn.svg" className="w-4 h-4 cursor-pointer " alt="Saved" />
+                  <img src="/img/icon/savebtn.svg" className="w-4 h-4 cursor-pointer" alt="Saved" />
                 )}
               </button>
 
             </div>
           </div>
         ))}
-            
       </div>
     </>
   )

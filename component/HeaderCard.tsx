@@ -12,9 +12,11 @@ const courses = [
     hours: "77/110",
     exams: "2/3",
     level: "Intermediate",
-    color : "#3b82f6",
+    color: "#3b82f6",
     timer: "img/icon/timer.png",
-    cimg : "/img/icon/course.png"
+    cimg: "/img/icon/course.png",
+    student: "/img/icon/comm.png",
+    exam: "/img/icon/exam.png",
   },
   {
     id: 2,
@@ -26,7 +28,11 @@ const courses = [
     hours: "60/100",
     exams: "2/3",
     level: "Basic",
-    color: "#FFA500"
+    color: "#FFA500",
+    timer: "img/icon/timer.png",
+    cimg: "/img/icon/course.png",
+    student: "/img/icon/comm.png",
+    exam: "/img/icon/exam.png",
   },
   {
     id: 3,
@@ -38,7 +44,11 @@ const courses = [
     hours: "75/300",
     exams: "2/8",
     level: "Advanced",
-    color: "#34d399"
+    color: "#34d399",
+    timer: "img/icon/timer.png",
+    cimg: "/img/icon/course.png",
+    student: "/img/icon/comm.png",
+    exam: "/img/icon/exam.png",
   },
 ];
 
@@ -46,7 +56,7 @@ function DashboardCard() {
   return (
     <div className="grid md:grid-cols-3 gap-3 p-4">
       {courses.map((course) => {
-        
+
         const radius = 20;
         const circumference = 2 * Math.PI * radius;
         const offset =
@@ -86,6 +96,7 @@ function DashboardCard() {
               </div>
 
 
+
               <div >
                 <h4 className="font-semibold text-gray-900">
                   {course.title}
@@ -96,15 +107,16 @@ function DashboardCard() {
               </div>
             </div>
 
-            <div className="mt-4 flex justify-center  text-xs text-gray-600 gap-8">
 
+
+            <div className="mt-4 flex justify-center  text-xs text-gray-600 gap-8">
               <div>
-                <p> {course.lessons} Lessons</p>
-                <p> {course.students} Students</p>
+                <p className="flex gap-2" > <img src={course.cimg} alt="" className="w-4 h-4" /> {course.lessons} Lessons</p>
+                <p className="flex gap-2 mt-2" >  <img src={course.student} alt="" className="w-4 h-4" /> {course.students} Students</p>
               </div>
               <div>
-                <p>{course.hours} Hours</p>
-                <p>{course.exams} Exams</p>
+                <p className="flex gap-2"><img src={course.timer} alt="" className="w-4 h-4" /> {course.hours} Hours</p>
+                <p className="flex gap-2 mt-2"> <img src={course.exam} alt="" className="w-4 h-4" /> {course.exams} Exams</p>
               </div>
             </div>
 

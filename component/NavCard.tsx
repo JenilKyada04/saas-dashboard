@@ -44,7 +44,7 @@ function NavCard() {
             </Tooltip>
 
             <Tooltip>
-                <TooltipTrigger className="cursor-pointer"><img src="/img/icon/savebtn.png" className="cursor-pointer " alt="" /></TooltipTrigger>
+                <TooltipTrigger className="cursor-pointer"><img src="/img/icon/savebtn1.png" className="cursor-pointer " alt="" /></TooltipTrigger>
                 <TooltipContent>
                     <p>Save Button</p>
                 </TooltipContent>
