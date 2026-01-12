@@ -30,7 +30,7 @@ export function Dropdownweekly() {
                         <DropdownMenuRadioItem value="right">Yearly</DropdownMenuRadioItem>
                         <DropdownMenuRadioItem value="bottom">Monthly</DropdownMenuRadioItem>
                         <DropdownMenuRadioItem value="top"> Weekly</DropdownMenuRadioItem>
-                        <DropdownMenuRadioItem value="right">Day</DropdownMenuRadioItem>
+                        <DropdownMenuRadioItem value="right" onClick={()=>{console.log("Custom change is not possibal")}   }>Custom</DropdownMenuRadioItem>
                     </DropdownMenuRadioGroup>
                 </DropdownMenuContent>
             </DropdownMenu>

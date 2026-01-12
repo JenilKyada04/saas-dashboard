@@ -17,6 +17,7 @@ export default function DashboardPage() {
 
           <div className="flex justify-between">
             <h6 className="pl-5 font-semibold text-xl">On going courses <span className="text-gray-400 pl-5">Completed Courses</span></h6>
+
             <h6 className='text-blue-600 cursor-pointer pr-4'>See All</h6>
           </div>
 
