@@ -41,10 +41,10 @@ function AllCourses() {
           </div>
 
           <div className="flex gap-3 ml-auto">
-            <button className="px-4 py-2 rounded-xl bg-white border text-blue-500 hover:bg-gray-100">
+            <button className="px-4 py-2 rounded-xl bg-white border text-blue-600 ">
               Reset
             </button>
-            <button className="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-black">
+            <button className="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-white hover:text-black">
               Filter
             </button>
           </div>
