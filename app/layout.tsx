@@ -1,6 +1,7 @@
 import "./globals.css";
 import { SidebarProvider } from "../context/SidebarContext";
 import DashboardLayout from "../component/DashboardLayout";
+import { SavedCoursesProvider } from "../context/SavedCoursesContext";
 
 export default function RootLayout({
   children,
@@ -10,12 +11,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SidebarProvider >
-          <DashboardLayout>
-            <div className="white-blue">
-              {children}
-            </div>
-          </DashboardLayout>
+        <SidebarProvider>
+          {/* ✅ Provider MUST wrap Navbar + Pages */}
+          <SavedCoursesProvider>
+            <DashboardLayout>
+              <div className="white-blue">
+                {children}
+              </div>
+            </DashboardLayout>
+          </SavedCoursesProvider>
         </SidebarProvider>
       </body>
     </html>

@@ -1,7 +1,7 @@
-"use client"
-import { useState } from "react";
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
+import { useSavedCourses } from "@/context/SavedCoursesContext";
 
 const uiuxcourse = [
   {
@@ -41,87 +41,75 @@ const uiuxcourse = [
     duration: "4-6 Months",
     popular: true,
   },
-]
+];
 
-function Coursecard() {
-  const [savedCourses, setSavedCourses] = useState<number[]>([]);
-
-  const handleClick = (courseId: number) => {
-    setSavedCourses(p =>
-      p.includes(courseId) ? p.filter(id => id !== courseId) : [...p , courseId]
-    );
-  }
+export default function Coursecard() {
+  const { toggleSave, isSaved } = useSavedCourses();
 
   return (
-    <>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
-        {uiuxcourse.map((course) => (
-          <div
-            key={course.id}
-            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg transition"
-          >
-            <Link href={"coursespage"}>
-              <div className="relative overflow-hidden rounded-xl">
-                {course.popular && (
-                  <span className="absolute top-3 right-3 text-blue-600 bg-white text-xs font-medium px-3 py-1 rounded-full z-10">
-                    Most Popular
-                  </span>
-                )}  
-                <img
-                  src={course.img}
-                  alt=""
-                  className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between text-xs text-gray-500">
-                  <span>{course.students}</span>
-                  <span>{course.hours}</span>
-                </div>
-                <h5 className="text-[17px] font-semibold leading-snug text-gray-900">
-                  {course.title}
-                </h5>
-                <p className="text-sm text-gray-600">
-                  {course.instructors}
-                </p>
-              </div>
-            </Link>
-
-            <div className="flex items-center gap-1 mt-3">
-              <img src="/img/star.png" className="w-4 h-4" alt="" />
-              <span className="text-sm text-gray-700">
-                {course.ratingText}
-              </span>
+    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
+      {uiuxcourse.map(course => (
+        <div
+          key={course.id}
+          className="bg-white rounded-2xl border p-4 hover:shadow-lg transition"
+        >
+          <Link href="/coursespage">
+            <div className="relative rounded-xl overflow-hidden">
+              {course.popular && (
+                <span className="absolute top-3 right-3 bg-white text-blue-600 text-xs px-3 py-1 rounded-full">
+                  Most Popular
+                </span>
+              )}
+              <img
+                src={course.img}
+                className="w-full h-64 object-cover hover:scale-105 transition"
+              />
             </div>
 
-            <div className="flex items-center justify-between mt-4">
-              <div className="flex items-center gap-1 text-xs text-gray-600">
-                <span>{course.level}</span>
-                <span>•</span>
-                <span>{course.type}</span>
-                <span>•</span>
-                <span>{course.duration}</span>
+            <div className="mt-4 space-y-2">
+              <div className="flex justify-between text-xs text-gray-500">
+                <span>{course.students}</span>
+                <span>{course.hours}</span>
               </div>
-
-
-              <button onClick={() => handleClick(course.id)} className="rounded-xl p-1">
-                {savedCourses.includes(course.id) ? (
-                  <img
-                    src="/img/icon/bookmark.svg"
-                    className="w-4 h-4 cursor-pointer"
-                    alt=""
-                  />
-                ) : (
-                  <img src="/img/icon/savebtn.svg" className="w-4 h-4 cursor-pointer" alt="Saved" />
-                )}
-              </button>
-
+              <h5 className="text-[17px] font-semibold">
+                {course.title}
+              </h5>
+              <p className="text-sm text-gray-600">
+                {course.instructors}
+              </p>
             </div>
+          </Link>
+
+          <div className="flex items-center gap-1 mt-3">
+            <img src="/img/star.png" className="w-4 h-4" />
+            <span className="text-sm">{course.ratingText}</span>
           </div>
-        ))}
-      </div>
-    </>
-  )
-}
 
-export default Coursecard
+          <div className="flex justify-between items-center mt-4">
+            <div className="text-xs text-gray-600">
+              {course.level} • {course.type} • {course.duration}
+            </div>
+
+            <button
+              onClick={() =>
+                toggleSave({
+                  id: course.id,
+                  img: course.img,
+                  title: course.title,
+                  instructors: course.instructors,
+                  ratingText: course.ratingText,
+                })
+              }
+            >
+              {isSaved(course.id) ? (
+                <img src="/img/icon/bookmark.svg" className="w-4 h-4" />
+              ) : (
+                <img src="/img/icon/savebtn.svg" className="w-4 h-4" />
+              )}
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
