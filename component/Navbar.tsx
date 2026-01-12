@@ -4,6 +4,12 @@ import Navright from "./NavCard";
 
 import { FiMenu } from "react-icons/fi";
 import { useSidebar } from "../context/SidebarContext";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { Button } from '@/components/ui/button'
 
 export default function Header() {
     const { setOpen } = useSidebar();
@@ -18,11 +24,20 @@ export default function Header() {
                     <FiMenu />
                 </button>
 
-                <h2 className="font-normal  hidden md:block text-black cursor-pointer">Dashboard</h2>
+
+
+                <h2 className="font-normal  hidden md:block text-black cursor-pointer">
+                    <Tooltip>
+                        <TooltipTrigger className="cursor-pointer">Dashboard</TooltipTrigger>
+                        <TooltipContent>
+                            <p>Dashboard</p>
+                        </TooltipContent>
+                    </Tooltip>
+                </h2>
             </div>
 
             <Navright />
-            
+
         </div>
     );
 }

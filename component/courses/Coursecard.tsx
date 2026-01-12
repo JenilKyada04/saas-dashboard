@@ -1,4 +1,6 @@
-import React from "react"
+"use client"
+import { useState } from "react";
+
 import Link from "next/link"
 
 const uiuxcourse = [
@@ -37,11 +39,20 @@ const uiuxcourse = [
     popular: true,
   },
 ]
-const handalclick = () => {
-  console.log("clicked");
-}
 
 function Coursecard() {
+  const [isSaved, setIsSaved] = useState(false);
+
+  const buttonStyle = {
+    backgroundColor: isSaved ? 'blue' : 'white',
+    color: 'white',
+    border: 'none',
+    cursor: 'pointer',
+  };
+
+  const handalclick = () => {
+    setIsSaved(!isSaved);
+  }
   return (<>
     <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
       {uiuxcourse.map((course, index) => (
@@ -80,12 +91,12 @@ function Coursecard() {
             </div>
 
           </Link>
-            <div className="flex items-center gap-1 mt-3">
-              <img src="/img/star.png" className="w-4 h-4" alt="" />
-              <span className="text-sm text-gray-700">
-                {course.ratingText}
-              </span>
-            </div>
+          <div className="flex items-center gap-1 mt-3">
+            <img src="/img/star.png" className="w-4 h-4" alt="" />
+            <span className="text-sm text-gray-700">
+              {course.ratingText}
+            </span>
+          </div>
 
           <div className="flex items-center justify-between mt-4">
             <div className="flex items-center gap-1 text-xs text-gray-600">
@@ -96,12 +107,19 @@ function Coursecard() {
               <span>{course.duration}</span>
             </div>
 
-            <img
-              src="/img/icon/savebtn.svg"
-              className="w-4 h-4 cursor-pointer "
-              alt=""
-              // onClick={handalclick}
-              />
+            {/* <img src="/img/icon/savebtn.svg"
+                className="w-4 h-4 cursor-pointer "
+                alt=""/> */}
+
+            <div>
+              <button onClick={handalclick} style={buttonStyle} className="rounded-xl p-1" ><img
+                src="/img/icon/savebtn.svg"
+                className="w-4 h-4 cursor-pointer "
+                alt=""
+
+              />{isSaved ? `` : ''}</button>
+            </div>
+
           </div>
         </div>
       ))}

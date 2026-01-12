@@ -2,6 +2,12 @@ import { FiSearch } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { Dropdown } from "./Dropdown";
 
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
+
 
 
 function NavCard() {
@@ -19,18 +25,54 @@ function NavCard() {
                 "
                 />
             </div>
-            <Dropdown />
-            <img src="/img/icon/chat.png" className="cursor-pointer " alt="" />
-            <img src="/img/icon/savebtn.png" className="cursor-pointer" alt="" />
-            <img src="/img/icon/bell.png" className="cursor-pointer" alt="" />
 
-            <img
-                src="/img/profile.png"
-                className="rounded-full w-10 hover:ring-1 hover:ring-red-500 cursor-pointer"
-                alt="profile"
-            />
-            <h5 className="sm:block hidden cursor-pointer" >Hi, Antonio</h5>
-            <IoIosArrowDown className="text-xl cursor-pointer" />
+
+
+
+            <Tooltip >
+                <TooltipTrigger className="cursor-pointer "> <Dropdown /></TooltipTrigger>
+                <TooltipContent>
+                    <p>Language</p>
+                </TooltipContent>
+            </Tooltip>
+
+            <Tooltip >
+                <TooltipTrigger className="cursor-pointer "><img src="/img/icon/chat.png" className="cursor-pointer " alt="" /></TooltipTrigger>
+                <TooltipContent className="bg-white text-blue-800 mt-3">
+                    <p  >Chat Box</p>
+                </TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+                <TooltipTrigger className="cursor-pointer"><img src="/img/icon/savebtn.png" className="cursor-pointer " alt="" /></TooltipTrigger>
+                <TooltipContent>
+                    <p>Save Button</p>
+                </TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+                <TooltipTrigger className="cursor-pointer"><img src="/img/icon/bell.png" className="cursor-pointer " alt="" /></TooltipTrigger>
+                <TooltipContent>
+                    <p>Notification</p>
+                </TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+                <TooltipTrigger className="cursor-pointer flex items-center justify-center gap-2"  > <img
+                    src="/img/profile.png"
+                    className="rounded-full w-10 hover:ring-1 hover:ring-red-500 cursor-pointer"
+                    alt="profile"
+                />
+                    <h5 className="sm:block hidden cursor-pointer" >Hi, Antonio</h5>
+                    <IoIosArrowDown className="text-xl cursor-pointer" /></TooltipTrigger>
+                <TooltipContent>
+                    <p>Profile</p>
+                </TooltipContent>
+            </Tooltip>
+
+            
+
+
         </div>
     )
 }
