@@ -7,8 +7,8 @@ import Link from 'next/link';
 export default function CoursesPage() {
   return (
     <>
-      <div className="p-6">
-        <h2 className="text-xl font-semibold">Browse Courses</h2>
+      <div className="p-6 white-blue">
+        <h2 className="text-xl font-semibold ">Browse Courses</h2>
         <Subject />
         <AllCourses />
         <Link href={"coursespage"}>

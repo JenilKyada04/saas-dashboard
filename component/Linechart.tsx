@@ -35,9 +35,11 @@ export function Linechart() {
     return (
         <Card className="rounded-2xl shadow-sm">
 
-            <CardHeader className="pb-0">
+            <CardHeader className="pb-0 relative">
+                    <span className="absolute left-0 top-0 h-6 w-1 bg-blue-600 rounded-full" />
                 <div className="flex items-start justify-between ">
                     <div className="flex  items-center gap-2">
+                        
                         <CardTitle className="text-base font-semibold 2xl:text-lg">
                             Improvement Graph
                         </CardTitle>

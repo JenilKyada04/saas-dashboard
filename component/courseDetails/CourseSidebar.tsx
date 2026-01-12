@@ -1,7 +1,6 @@
 const CourseSidebar = () => {
     return (
       <div className="bg-white p-6 rounded-xl h-160 space-y-5 border">
-        {/* Price */}
         <div className="flex items-center gap-3">
           <span className="text-2xl font-semibold text-gray-900">$60.99</span>
           <span className="text-sm line-through text-gray-400">$89.00</span>
@@ -10,7 +9,6 @@ const CourseSidebar = () => {
           </span>
         </div>
   
-        {/* Details */}
         <div className="divide-y text-sm">
           <div className="flex justify-between py-2">
             <span className="text-gray-500">Start Date</span>

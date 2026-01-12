@@ -39,13 +39,12 @@ const uiuxcourse = [
 
 function Coursecard() {
   return (
-    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
       {uiuxcourse.map((course, index) => (
         <div
           key={index}
           className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg transition"
         >
-          {/* Image */}
           <div className="relative overflow-hidden rounded-xl">
             {course.popular && (
               <span className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-full z-10">
@@ -56,11 +55,10 @@ function Coursecard() {
             <img
               src={course.img}
               alt=""
-              className="w-full h-[180px] object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
 
-          {/* Content */}
           <div className="mt-4 space-y-2">
             <div className="flex justify-between text-xs text-gray-500">
               <span>{course.students}</span>
@@ -76,7 +74,6 @@ function Coursecard() {
             </p>
           </div>
 
-          {/* Rating */}
           <div className="flex items-center gap-1 mt-3">
             <img src="/img/star.png" className="w-4 h-4" alt="" />
             <span className="text-sm text-gray-700">
@@ -84,7 +81,6 @@ function Coursecard() {
             </span>
           </div>
 
-          {/* Footer */}
           <div className="flex items-center justify-between mt-4">
             <div className="flex items-center gap-1 text-xs text-gray-600">
               <span>{course.level}</span>

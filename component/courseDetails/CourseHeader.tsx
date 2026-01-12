@@ -2,9 +2,10 @@ import { Bookmark } from "lucide-react";
 
 const CourseHeader = () => {
   return (
-    <div className="bg-white p-6 rounded-xl space-y-4">
+    <div className="bg-white p-6 rounded-xl space-y-4 relative">
+      <span className="absolute left-0 top-6 h-10 w-1 bg-blue-600 rounded-full" />
 
-      <h1 className="text-3xl font-semibold text-[#0B1C39] leading-snug">
+      <h1 className="text-3xl font-semibold text-black leading-snug">
         UI/UX Designing and Wireframing and Webflow Designing
       </h1>
 
@@ -37,7 +38,7 @@ const CourseHeader = () => {
           Software You’ll Learn:
         </span>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ">
 
           <div className="flex items-center gap-2 text-sm text-gray-600">
             <img src="/img/icon/Figma.png" className="w-6 h-6" alt="Figma" />
@@ -50,7 +51,7 @@ const CourseHeader = () => {
           </div>
 
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <img src="/img/icon/AdobeXd.png" className="w-6 h-6" alt="Adobe XD" />
+            <img src="/img/icon/AdobeXD.png" className="w-6 h-6" alt="Adobe XD" />
             Adobe XD
           </div>
 

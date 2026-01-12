@@ -1,4 +1,5 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
+import Coursecard from "./courses/Coursecard";
 
 const courses = [
   {
@@ -98,7 +99,7 @@ function DashboardCard() {
             <div className="mt-4 flex justify-center  text-xs text-gray-600 gap-8">
 
               <div>
-                <p> {course.lessons} Lessons</p>
+                <p>{course.cimg} {course.lessons} Lessons</p>
                 <p> {course.students} Students</p>
               </div>
               <div>

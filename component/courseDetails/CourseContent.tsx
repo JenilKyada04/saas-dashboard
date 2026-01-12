@@ -33,8 +33,10 @@ const CourseContent = () => {
     const [openIndex, setOpenIndex] = useState<number>(0);
 
     return (
-        <div className="bg-white p-6 rounded-xl">
-            <h3 className="font-semibold text-lg mb-2">Course Content</h3>
+        <div className="bg-white p-6 rounded-xl relative">
+            <span className="absolute left-0 top-6 h-6 w-1 bg-blue-600 rounded-full" />
+            
+            <h3 className="font-semibold text-lg mb-2">  Course Content</h3>
             <p className="text-sm text-gray-500 mb-4">
                 All techniques are explained step-by-step, in a beginner-friendly format
                 so that you can easily follow in a cohesive way.
@@ -45,47 +47,47 @@ const CourseContent = () => {
                     const isOpen = openIndex === index;
 
                     return (
-                        <div key={index}>
-                            <button
-                                onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                                className="w-full flex justify-between items-center p-4 text-sm font-medium"
-                            >
-                                <span>{section.title}</span>
-                                <span className="text-xl">{isOpen ? "−" : "+"}</span>
-                            </button>
+                <div key={index}>
+                    <button
+                        onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                        className="w-full flex justify-between items-center p-4 text-sm font-medium"
+                    >
+                        <span>{section.title}</span>
+                        <span className="text-xl">{isOpen ? "-" : "+"}</span>
+                    </button>
 
-                            {isOpen && section.lessons && (
-                                <div className="border-t">
-                                    {section.lessons.map((lesson, i) => (
-                                        <div
-                                            key={i}
-                                            className="flex items-center justify-between px-4 py-3 text-sm"
-                                        >
-                                            <div className="flex items-center gap-3 text-gray-700">
-                                                {lesson.preview ? (
-                                                    <PlayCircle size={16} />
-                                                ) : (
-                                                    <FileText size={16} />
-                                                )}
-                                                <span>{lesson.title}</span>
-                                            </div>
+                    {isOpen && section.lessons && (
+                        <div className="border-t">
+                            {section.lessons.map((lesson, i) => (
+                                <div
+                                    key={i}
+                                    className="flex items-center justify-between px-4 py-3 text-sm"
+                                >
+                                    <div className="flex items-center gap-3 text-gray-700">
+                                        {lesson.preview ? (
+                                            <PlayCircle size={16} />
+                                        ) : (
+                                            <FileText size={16} />
+                                        )}
+                                        <span>{lesson.title}</span>
+                                    </div>
 
-                                            <div className="flex items-center gap-4">
-                                                <span className="text-gray-500">
-                                                    {lesson.duration}
-                                                </span>
+                                    <div className="flex items-center gap-4">
+                                        <span className="text-gray-500">
+                                            {lesson.duration}
+                                        </span>
 
-                                                {lesson.preview && (
-                                                    <button className="flex items-center gap-1 text-blue-600 text-xs border px-2 py-1 rounded">
-                                                        <Eye size={12} />
-                                                        Preview
-                                                    </button>
-                                                )}
-                                            </div>
-                                        </div>
-                                    ))}
+                                        {lesson.preview && (
+                                            <button className="flex items-center gap-1 text-blue-600 text-xs border px-2 py-1 rounded">
+                                                <Eye size={12} />
+                                                Preview
+                                            </button>
+                                        )}
+                                    </div>
                                 </div>
-                            )}
+                            ))}
+                        </div>
+                    )}
                         </div>
                     );
                 })}

@@ -31,7 +31,8 @@ const chartData = [
 export function Barchart() {
   return (
     <Card className="rounded-2xl">
-      <CardHeader className="flex flex-row items-center justify-between">
+      <CardHeader className="flex flex-row items-center justify-between relative ">
+        <span className="absolute left-0 top-0 h-6 w-1 bg-blue-600 rounded-full" />
         <div>
           <CardTitle className="text-lg font-semibold">
             Study Statistics

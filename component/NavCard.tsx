@@ -6,7 +6,7 @@ import { Dropdown } from "./Dropdown";
 
 function NavCard() {
     return (
-        <div className="flex  items-center gap-4  ">
+        <div className="flex  items-center gap-4 px-4  ">
             <div className="relative hidden sm:block cursor-pointer">
                 <FiSearch className="absolute top-2.5 left-3 text-gray-400" />
                 <input
@@ -31,7 +31,7 @@ function NavCard() {
                 />
             </div>
             <Dropdown />
-            <img src="/img/icon/chat.png" className="cursor-pointer" alt="" />
+            <img src="/img/icon/chat.png" className="cursor-pointer " alt="" />
             <img src="/img/icon/savebtn.png" className="cursor-pointer" alt="" />
             <img src="/img/icon/bell.png" className="cursor-pointer" alt="" />
 

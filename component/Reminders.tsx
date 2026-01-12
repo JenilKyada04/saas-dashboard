@@ -2,11 +2,12 @@ import Reminderscard from "./Reminderscard"
 
 function Reminders() {
     return (
-      <div className="bg-white rounded-2xl p-5 h-125 2xl:h-168 flex flex-col">
+      <div className="bg-white rounded-2xl p-5 h-125 2xl:h-168 flex flex-col relative">
+        <span className="absolute left-0 top-4 h-8 w-1 bg-blue-600 rounded-full" />
         
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <span className="w-1 h-6 bg-blue-600 rounded-full"></span>
+           
             <h2 className="font-semibold 2xl:text-lg">Reminders</h2>
           </div>
   

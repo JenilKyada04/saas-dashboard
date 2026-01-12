@@ -1,6 +1,6 @@
 import { Linechart } from "../component/Linechart";
 import { Barchart } from "../component/Barchart";
-import Card from "../component/DashboardCard";
+import Card from "../component/HeaderCard";
 import Topteachers from "../component/Topteachers";
 import Reminders from "../component/Reminders";
 
@@ -11,18 +11,13 @@ export default function DashboardPage() {
 
         <h2 className="text-xl font-semibold">Hello, Antonio</h2>
 
-        <div className="mt-6 pt-4  bg-white rounded-lg shadow">
+        <div className="mt-6 pt-4  bg-white relative rounded-lg shadow">
+
+          <span className="absolute left-0 top-4 h-6 w-1 bg-blue-600 rounded-full" />
+
           <div className="flex justify-between">
-            <div>
-              <h1 className="font-semibold flex gap-1 left-0 top-2 bottom-2 w-1 bg-blue-600 rounded-r-md ">
-                <span className="pl-3" >On</span>
-                <span>going</span>
-                <span>courses</span>
-              </h1>
-            </div>
-            <div>
-              <h6 className='text-blue-600 cursor-pointer pr-4'>See All</h6>
-            </div>
+            <h6 className="pl-5 font-semibold text-xl">On going courses</h6>
+            <h6 className='text-blue-600 cursor-pointer pr-4'>See All</h6>
           </div>
 
           <div className="p-2" >
