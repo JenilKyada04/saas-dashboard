@@ -21,9 +21,10 @@ export function Dropdownshortby() {
   const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
   const [showPanel, setShowPanel] = React.useState<Checked>(false)
 
+
   return (
     <DropdownMenu >
-      <DropdownMenuTrigger asChild className="w-70 mt-2 font-light flex justify-between cursor-pointer">
+      <DropdownMenuTrigger asChild className="w-70 mt-2 font-light flex justify-between cursor-pointer" >
         <Button variant="outline">Recommended <IoIosArrowDown /></Button>
        
       </DropdownMenuTrigger>
@@ -39,7 +40,6 @@ export function Dropdownshortby() {
         <DropdownMenuCheckboxItem
           checked={showActivityBar}
           onCheckedChange={setShowActivityBar}
-          
         >
           Monthly
         </DropdownMenuCheckboxItem>
@@ -53,3 +53,4 @@ export function Dropdownshortby() {
     </DropdownMenu>
   )
 }
+

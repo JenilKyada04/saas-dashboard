@@ -34,8 +34,8 @@ export default function Sidebar() {
         ${open ? "translate-x-0" : "-translate-x-full"}
         md:translate-x-0 flex flex-col`}
       >
-        <div className="flex flex-col items-center py-8">
-          <img src="/img/logo.png" className="w-16 mb-2" alt="logo" />
+        <div className="flex flex-col items-center py-8 cursor-pointer">
+          <img src="/img/logo.png" className="w-16 mb-2 " alt="logo" />
           <h1 className="text-xl font-bold text-blue-600">EDUBOARD</h1>
         </div>
 

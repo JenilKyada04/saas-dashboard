@@ -20,7 +20,7 @@ function AllCourses() {
       <div className="mt-5 p-4 rounded-xl ">
         <div className="flex flex-wrap gap-6 items-center justify-start">
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1" >
             <h6 className="text-xs font-light text-black uppercase" >
               Short By
             </h6>

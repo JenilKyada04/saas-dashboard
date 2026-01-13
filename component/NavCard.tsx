@@ -74,7 +74,7 @@ function NavCard() {
                 />
             </div>
 
-           
+
 
 
             <Tooltip>
@@ -86,17 +86,20 @@ function NavCard() {
                 <TooltipContent>Language</TooltipContent>
             </Tooltip>
 
+            <div ref={savedRef} className="relative">
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <button>
+                            <img src="/img/icon/chat.png" className=" cursor-pointer " alt="Chat" />
+                        </button>
+                    </TooltipTrigger>
+                    <TooltipContent>Chat Box</TooltipContent>
+                </Tooltip>
 
-            <Tooltip>
-                <TooltipTrigger asChild>
-                    <button>
-                        <img src="/img/icon/chat.png" className=" cursor-pointer " alt="Chat" />
-                    </button>
-                </TooltipTrigger>
-                <TooltipContent>Chat Box</TooltipContent>
-            </Tooltip>
 
-            
+            </div>
+
+
 
             <div ref={savedRef} className="relative">
                 <Tooltip>
@@ -186,8 +189,8 @@ function NavCard() {
                             </li>
                         </ul>
                     </div>
-                )} 
-             </div> 
+                )}
+            </div>
         </div>
     );
 }
