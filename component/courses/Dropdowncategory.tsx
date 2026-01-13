@@ -34,20 +34,19 @@ export function Dropdowncategory() {
           checked={showStatusBar}
           onCheckedChange={setShowStatusBar}
         >
-          Status Bar
+          Fronted
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={showActivityBar}
           onCheckedChange={setShowActivityBar}
-          disabled
         >
-          Activity Bar
+         Backend
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={showPanel}
           onCheckedChange={setShowPanel}
         >
-          Panel
+          Full Stack
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -4,6 +4,8 @@ import DashboardLayout from "../component/DashboardLayout";
 import { SavedCoursesProvider } from "../context/SavedCoursesContext";
 
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
+import { type ReactNode } from 'react'
+
 
 
 export default function RootLayout({
@@ -14,20 +16,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <NuqsAdapter>
 
-        <SidebarProvider>
-          <SavedCoursesProvider>
-            <DashboardLayout>
+          <SidebarProvider>
+            <SavedCoursesProvider>
+              <DashboardLayout>
 
-              <NuqsAdapter>
                 <div className="white-blue">
                   {children}
                 </div>
-              </NuqsAdapter>
 
-            </DashboardLayout>
-          </SavedCoursesProvider>
-        </SidebarProvider>
+              </DashboardLayout>
+            </SavedCoursesProvider>
+          </SidebarProvider>
+
+        </NuqsAdapter>
 
       </body>
     </html>

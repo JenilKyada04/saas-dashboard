@@ -8,8 +8,7 @@ import { Dropdown } from "./Dropdown";
 import NavbarSaved from "./NavbarSaved";
 import NavbarNotification from "./NavbarNotification";
 import { useSavedCourses } from "../context/SavedCoursesContext";
-import ProfileDropdown from './ProfileDropdown'
-// import { useQueryState } from 'nuqs'
+import { useQueryState } from 'nuqs'
 
 
 import {
@@ -59,7 +58,7 @@ function NavCard() {
         };
     }, []);
 
-    // const [name, setName] = useQueryState('name')
+    const [name, setName] = useQueryState('name')
 
     return (
         <div className="relative flex items-center gap-4 px-4">
@@ -70,12 +69,12 @@ function NavCard() {
                     type="text"
                     placeholder="Search"
                     className="w-66 pl-10 pr-4 py-2 text-sm rounded-xl bg-blue-50 focus:outline-none"
+                    value={name || ''}
+                    onChange={e => setName(e.target.value)}
                 />
             </div>
 
-            {/* <input value={name || ''} onChange={e => setName(e.target.value)} type="text"
-                placeholder="Search"
-                className="w-66 pl-10 pr-4 py-2 text-sm rounded-xl bg-blue-50 focus:outline-none" /> */}
+           
 
 
             <Tooltip>

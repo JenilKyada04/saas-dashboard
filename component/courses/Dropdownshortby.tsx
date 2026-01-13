@@ -34,20 +34,20 @@ export function Dropdownshortby() {
           checked={showStatusBar}
           onCheckedChange={setShowStatusBar}
         >
-          Status Bar
+          Weekly
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={showActivityBar}
           onCheckedChange={setShowActivityBar}
-          disabled
+          
         >
-          Activity Bar
+          Monthly
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={showPanel}
           onCheckedChange={setShowPanel}
         >
-          Panel
+          Yearly
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -4,6 +4,7 @@ import { Dropdownshortby } from "./Dropdownshortby";
 import { Dropdowncategory } from "./Dropdowncategory";
 import Pricerange from "./Pricerange";
 
+
 function AllCourses() {
   return (
     <>
@@ -13,14 +14,14 @@ function AllCourses() {
           <span className="font-light text-gray-500">
             (14,542 results)
           </span>
-        </h6>
+        </h6> 
       </div>
 
       <div className="mt-5 p-4 rounded-xl ">
         <div className="flex flex-wrap gap-6 items-center justify-start">
 
           <div className="flex flex-col gap-1">
-            <h6 className="text-xs font-light text-black uppercase">
+            <h6 className="text-xs font-light text-black uppercase" >
               Short By
             </h6>
             <Dropdownshortby />
