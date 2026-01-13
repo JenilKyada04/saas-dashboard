@@ -41,7 +41,7 @@ export default function NotificationDropdown({ open, onClose }: Props) {
     <div
       ref={ref}
       className="absolute right-0 top-12 z-50 w-80 bg-white rounded-xl shadow-lg border"
-    >
+    > 
       <div className="p-4 border-b font-semibold">Notifications</div>
 
       <div className="max-h-72 overflow-y-auto">

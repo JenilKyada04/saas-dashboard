@@ -8,7 +8,6 @@ export default function ProfileDropdown() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  // Close on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -21,7 +20,6 @@ export default function ProfileDropdown() {
 
   return (
     <div ref={ref} className="relative">
-      {/* Profile Button */}
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 focus:outline-none"
@@ -36,7 +34,6 @@ export default function ProfileDropdown() {
         <span className="hidden md:block font-medium">Antonio</span>
       </button>
 
-      {/* Dropdown */}
       {open && (
         <div className="absolute right-0 mt-3 w-52 rounded-xl bg-white shadow-lg border z-50">
           <ul className="py-2 text-sm">

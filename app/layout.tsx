@@ -12,7 +12,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SidebarProvider>
-          {/* ✅ Provider MUST wrap Navbar + Pages */}
           <SavedCoursesProvider>
             <DashboardLayout>
               <div className="white-blue">
