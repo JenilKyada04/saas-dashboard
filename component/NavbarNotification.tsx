@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { X } from "lucide-react";
 
 type Props = {
   open: boolean;
   onClose: () => void;
 };
+
 
 const notifications = [
   {
@@ -48,12 +50,16 @@ export default function NotificationDropdown({ open, onClose }: Props) {
         {notifications.map((item) => (
           <div
             key={item.id}
-            className="px-4 py-3 hover:bg-gray-50 cursor-pointer"
+            className="px-4 py-3 hover:bg-gray-50 cursor-pointer relative shadow "
           >
             <p className="text-sm font-medium">{item.title}</p>
             <p className="text-xs text-gray-500">{item.desc}</p>
             <p className="text-xs text-gray-400 mt-1">{item.time}</p>
+
+            <X className="w-4 h-4 text-gray-400 hover:text-red-500 absolute right-3 top-1 " />
+
           </div>
+          
         ))}
       </div>
 

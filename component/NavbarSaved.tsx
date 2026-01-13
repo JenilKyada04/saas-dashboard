@@ -1,13 +1,13 @@
 "use client";
 
-import { useSavedCourses } from "../context/SavedCoursesContext";
+import { useSavedCourses } from "@/context/SavedCoursesContext";
 import { X } from "lucide-react";
 
 export default function NavbarSaved() {
     const { savedCourses, toggleSave } = useSavedCourses();
 
     return (
-        <div className="absolute right-0 top-12 z-50 w-80 bg-white rounded-2xl shadow-2xl p-4">
+        <div className="absolute right-0 top-12 z-50 w-80 bg-white rounded-2xl shadow-2xl p-4 ">
 
             <div className="flex items-center justify-between mb-3">
                 <h4 className="font-semibold text-gray-800">
@@ -31,7 +31,7 @@ export default function NavbarSaved() {
 
             <div className="space-y-3 max-h-72 overflow-auto scrollbar-thin scrollbar-thumb-gray-200">
 
-                {savedCourses.map(course => (
+                {savedCourses.map((course:any) => (
                     <div
                         key={course.id}
                         className="group flex items-start gap-3 p-2 rounded-xl hover:bg-gray-50 transition"
@@ -55,11 +55,10 @@ export default function NavbarSaved() {
                             onClick={() => toggleSave(course)}
                             className="opacity-0 group-hover:opacity-100 transition"
                         >
-                            <X className="w-4 h-4 text-gray-400 hover:text-red-500" />
+                            <X className="w-4 h-4 text-gray-400 hover:text-red-500 cursor-pointer" />
                         </button>
                     </div>
                 ))}
-
             </div>
 
 

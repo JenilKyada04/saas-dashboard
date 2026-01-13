@@ -44,6 +44,7 @@ const uiuxcourse = [
 ];
 
 export default function Coursecard() {
+
   const { toggleSave, isSaved } = useSavedCourses();
 
   return (
@@ -100,6 +101,7 @@ export default function Coursecard() {
                   ratingText: course.ratingText,
                 })
               }
+              className="cursor-pointer"
             >
               {isSaved(course.id) ? (
                 <img src="/img/icon/bookmark.svg" className="w-4 h-4" />

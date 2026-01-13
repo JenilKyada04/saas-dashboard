@@ -87,6 +87,7 @@ function NavCard() {
                 <TooltipContent>Language</TooltipContent>
             </Tooltip>
 
+
             <Tooltip>
                 <TooltipTrigger asChild>
                     <button>
@@ -95,6 +96,8 @@ function NavCard() {
                 </TooltipTrigger>
                 <TooltipContent>Chat Box</TooltipContent>
             </Tooltip>
+
+            
 
             <div ref={savedRef} className="relative">
                 <Tooltip>
@@ -184,7 +187,6 @@ function NavCard() {
                             </li>
                         </ul>
                     </div>
-                    
                 )} 
              </div> 
         </div>
