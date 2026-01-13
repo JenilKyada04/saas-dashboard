@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Header from "./Navbar";
 import React from "react";
 
+
 function DashboardLayout({
   children,
 }: {
@@ -20,7 +21,7 @@ function DashboardLayout({
         </header>
 
         <main className="mt-16 flex-1 overflow-y-auto ">
-          {children}
+           {children}
 
           <Footer />
         </main>

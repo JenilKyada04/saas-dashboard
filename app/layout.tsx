@@ -3,6 +3,9 @@ import { SidebarProvider } from "../context/SidebarContext";
 import DashboardLayout from "../component/DashboardLayout";
 import { SavedCoursesProvider } from "../context/SavedCoursesContext";
 
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
+
+
 export default function RootLayout({
   children,
 }: {
@@ -11,15 +14,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+
         <SidebarProvider>
           <SavedCoursesProvider>
             <DashboardLayout>
-              <div className="white-blue">
-                {children}
-              </div>
+
+              <NuqsAdapter>
+                <div className="white-blue">
+                  {children}
+                </div>
+              </NuqsAdapter>
+
             </DashboardLayout>
           </SavedCoursesProvider>
         </SidebarProvider>
+
       </body>
     </html>
   );
