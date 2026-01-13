@@ -19,7 +19,7 @@ export default function DashboardPage() {
         <Tooltip>
           <TooltipTrigger className="text-xl font-semibold mt-3 md:mt-0 cursor-pointer" >Hello, Antonio</TooltipTrigger>
           <TooltipContent>
-            <p>Hello</p>
+            <p>Hello, Antonio</p>
           </TooltipContent>
         </Tooltip>
 
