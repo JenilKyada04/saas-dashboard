@@ -7,7 +7,7 @@ export default function NavbarSaved() {
     const { savedCourses, toggleSave } = useSavedCourses();
 
     return (
-        <div className="absolute right-0 top-12 z-50 w-80 bg-white rounded-2xl shadow-2xl p-4 ">
+        <div className="absolute right-0 top-12 z-50 w-100 h-100     bg-white rounded-2xl shadow-2xl p-4 ">
 
             <div className="flex items-center justify-between mb-3">
                 <h4 className="font-semibold text-gray-800">
@@ -17,17 +17,6 @@ export default function NavbarSaved() {
                     {savedCourses.length}
                 </span> 
             </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
             {savedCourses.length === 0 && (

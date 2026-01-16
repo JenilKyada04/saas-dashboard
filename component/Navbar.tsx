@@ -36,39 +36,53 @@ export default function Header() {
                     <FiMenu />
                 </button>
 
-                {/* <h2 className="font-normal  hidden md:block text-black cursor-pointer">
+                <h2 className="font-normal  hidden md:block text-black cursor-pointer">
                     <Tooltip>
                         <TooltipTrigger className="cursor-pointer">Dashboard</TooltipTrigger>
                         <TooltipContent>
                             <p>Dashboard</p>
                         </TooltipContent>
                     </Tooltip>
-                </h2> */}
+                </h2>
 
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/">Dashboard</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
 
-                        <BreadcrumbSeparator>
-                            <SlashIcon />
-                        </BreadcrumbSeparator>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/courses">Courses</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator>
-                            <SlashIcon />
-                        </BreadcrumbSeparator>
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Courses Page</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb>
+                {/* <div className=" hidden md:block">
+
+                    <Breadcrumb>
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+
+
+                                    <Tooltip>
+                                        <TooltipTrigger className="cursor-pointer"> <Link href="/">Dashboard</Link></TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>Dashboard</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+
+                            <BreadcrumbSeparator>
+                                <SlashIcon />
+                            </BreadcrumbSeparator>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link href="/courses">Courses</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>   
+                            <BreadcrumbSeparator>
+                                <SlashIcon />
+                            </BreadcrumbSeparator>
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>
+                                    <Link href={"/coursespage"}> Courses Page</Link>
+                                </BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </div> */}
 
             </div>
 
