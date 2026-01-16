@@ -19,9 +19,10 @@ export function Dropdownshortby() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="w-70 mt-2">
-        <Button variant="outline">
-          {sort ?? "Recommended"} <IoIosArrowDown />
+      <DropdownMenuTrigger asChild className="w-70 mt-2 ">
+        <Button variant="outline" className="flex justify-between cursor-pointer">
+          {sort ?? "Recommended"} 
+          <IoIosArrowDown />
         </Button>
       </DropdownMenuTrigger>
 

@@ -6,12 +6,11 @@ import { useEffect, useRef, useState } from "react";
 
 import { Dropdown } from "./Dropdown";
 import NavbarSaved from "./NavbarSaved";
-import NavbarNotification from "./NavbarNotification";
+import Notification from "./Notification";
 import { useSavedCourses } from "../context/SavedCoursesContext";
 import ChatDropdown from "./ChatDropdown";
 
 import { useQueryState } from 'nuqs'
-
 
 import {
     Tooltip,
@@ -64,7 +63,6 @@ function NavCard() {
             ) {
                 setOpenChat(false);
             }
-
         }
 
         document.addEventListener("mousedown", handleClickOutside);
@@ -90,8 +88,6 @@ function NavCard() {
             </div>
 
 
-
-
             <Tooltip>
                 <TooltipTrigger asChild>
                     <div>
@@ -114,12 +110,12 @@ function NavCard() {
                         </button>
                     </TooltipTrigger>
                     <TooltipContent>Chat Box</TooltipContent>
+                    <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] px-1.5 rounded-full">2</span>
+
                 </Tooltip>
 
                 {openChat && <ChatDropdown />}
             </div>
-
-
 
 
             <div ref={savedRef} className="relative">
@@ -162,7 +158,7 @@ function NavCard() {
                 </Tooltip>
 
                 {openNotification && (
-                    <NavbarNotification
+                    <Notification
                         open={openNotification}
                         onClose={() => setOpenNotification(false)}
                     />

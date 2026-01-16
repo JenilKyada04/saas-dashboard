@@ -2,6 +2,7 @@
 
 export default function ChatDropdown() {
   return (
+    
     <div className="absolute right-0 mt-3 w-64 rounded-xl bg-white shadow-lg border p-4 z-50">
       <h6 className="text-sm font-semibold mb-3">Chats</h6>
 

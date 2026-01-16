@@ -19,8 +19,9 @@ export function Dropdowncategory() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="w-70 mt-2">
-        <Button variant="outline">
-          {category ?? "Web Design"} <IoIosArrowDown />
+        <Button variant="outline" className="flex justify-between cursor-pointer">
+          {category ?? "Web Design"} 
+          <IoIosArrowDown />
         </Button>
       </DropdownMenuTrigger>
 

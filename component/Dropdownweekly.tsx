@@ -15,14 +15,14 @@ import {
 
 export function Dropdownweekly() {
     
-  const [sort, setSort] = useQueryState("sort", {
+  const [sort, setSort] = useQueryState("study", {
     defaultValue: "weekly",
   });
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="flex gap-2">
+        <Button variant="outline" className="flex gap-2 cursor-pointer">
           {sort}
           <IoIosArrowDown />
         </Button>

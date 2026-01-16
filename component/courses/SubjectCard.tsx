@@ -29,7 +29,7 @@ function SubjectCard() {
         {subject.map((sub, index) => (
           <div
             key={index}
-            className="flex items-center justify-between bg-white border rounded-xl  hover:shadow-sm transition"
+            className="flex items-center cursor-pointer justify-between bg-white border rounded-xl  hover:shadow-md transition"
           >
             <div className="pl-5 ">
               <h6 className="text-sm font-semibold text-gray-900">
