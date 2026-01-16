@@ -15,7 +15,7 @@ function AllCourses() {
             (14,542 results)
           </span>
         </h6> 
-      </div>
+      </div>  
 
       <div className="mt-5 p-4 rounded-xl ">
         <div className="flex flex-wrap gap-6 items-center justify-start">

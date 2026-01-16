@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
 import { IoIosArrowDown } from "react-icons/io";
-import { type DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
+import { useQueryState } from "nuqs";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -12,45 +11,45 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-type Checked = DropdownMenuCheckboxItemProps["checked"]
+} from "@/components/ui/dropdown-menu";
 
 export function Dropdownshortby() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
-  const [showPanel, setShowPanel] = React.useState<Checked>(false)
-
+  
+  const [sort, setSort] = useQueryState("sort");
 
   return (
-    <DropdownMenu >
-      <DropdownMenuTrigger asChild className="w-70 mt-2 font-light flex justify-between cursor-pointer" >
-        <Button variant="outline">Recommended <IoIosArrowDown /></Button>
-       
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild className="w-70 mt-2">
+        <Button variant="outline">
+          {sort ?? "Recommended"} <IoIosArrowDown />
+        </Button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Recommended</DropdownMenuLabel>
+        <DropdownMenuLabel>SORT BY</DropdownMenuLabel>
         <DropdownMenuSeparator />
+
         <DropdownMenuCheckboxItem
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
+          checked={sort === "Weekly"}
+          onCheckedChange={() => setSort("Weekly")}
         >
           Weekly
         </DropdownMenuCheckboxItem>
+
         <DropdownMenuCheckboxItem
-          checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
+          checked={sort === "Monthly"}
+          onCheckedChange={() => setSort("Monthly")}
         >
           Monthly
         </DropdownMenuCheckboxItem>
+
         <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
+          checked={sort === "Yearly"}
+          onCheckedChange={() => setSort("Yearly")}
         >
           Yearly
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
-

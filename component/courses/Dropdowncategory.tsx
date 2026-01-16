@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
 import { IoIosArrowDown } from "react-icons/io";
-import { type DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
+import { useQueryState } from "nuqs";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -12,43 +11,44 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-type Checked = DropdownMenuCheckboxItemProps["checked"]
+} from "@/components/ui/dropdown-menu";
 
 export function Dropdowncategory() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
-  const [showPanel, setShowPanel] = React.useState<Checked>(false)
+  const [category, setCategory] = useQueryState("category");
 
   return (
-    <DropdownMenu >
-      <DropdownMenuTrigger asChild className="w-70 mt-2 font-light flex justify-between cursor-pointer">
-        <Button variant="outline">Web Design <IoIosArrowDown /></Button>
-       
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild className="w-70 mt-2">
+        <Button variant="outline">
+          {category ?? "Web Design"} <IoIosArrowDown />
+        </Button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>CATEGORY</DropdownMenuLabel>
         <DropdownMenuSeparator />
+
         <DropdownMenuCheckboxItem
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
+          checked={category === "Frontend"}
+          onCheckedChange={() => setCategory("Frontend")}
         >
-          Fronted
+          Frontend
         </DropdownMenuCheckboxItem>
+
         <DropdownMenuCheckboxItem
-          checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
+          checked={category === "Backend"}
+          onCheckedChange={() => setCategory("Backend")}
         >
-         Backend
+          Backend
         </DropdownMenuCheckboxItem>
+
         <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
+          checked={category === "Fullstack"}
+          onCheckedChange={() => setCategory("Fullstack")}
         >
           Full Stack
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

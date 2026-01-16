@@ -8,6 +8,8 @@ import { Dropdown } from "./Dropdown";
 import NavbarSaved from "./NavbarSaved";
 import NavbarNotification from "./NavbarNotification";
 import { useSavedCourses } from "../context/SavedCoursesContext";
+import ChatDropdown from "./ChatDropdown";
+
 import { useQueryState } from 'nuqs'
 
 
@@ -16,11 +18,16 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
+import ProfileDropdown from "./ProfileDropdown";
 
 function NavCard() {
     const [openSaved, setOpenSaved] = useState(false);
     const [openNotification, setOpenNotification] = useState(false);
     const [openProfile, setOpenProfile] = useState(false);
+
+    const [openChat, setOpenChat] = useState(false);
+    const chatRef = useRef<HTMLDivElement>(null);
+
 
     const { savedCourses } = useSavedCourses();
 
@@ -50,6 +57,14 @@ function NavCard() {
             ) {
                 setOpenProfile(false);
             }
+
+            if (
+                chatRef.current &&
+                !chatRef.current.contains(event.target as Node)
+            ) {
+                setOpenChat(false);
+            }
+
         }
 
         document.addEventListener("mousedown", handleClickOutside);
@@ -86,18 +101,24 @@ function NavCard() {
                 <TooltipContent>Language</TooltipContent>
             </Tooltip>
 
-            <div ref={savedRef} className="relative">
+
+
+            <div ref={chatRef} className="relative">
                 <Tooltip>
                     <TooltipTrigger asChild>
-                        <button>
-                            <img src="/img/icon/chat.png" className=" cursor-pointer " alt="Chat" />
+                        <button
+                            onClick={() => setOpenChat(prev => !prev)}
+                            className="cursor-pointer"
+                        >
+                            <img src="/img/icon/chat.png" alt="Chat" />
                         </button>
                     </TooltipTrigger>
                     <TooltipContent>Chat Box</TooltipContent>
                 </Tooltip>
 
-
+                {openChat && <ChatDropdown />}
             </div>
+
 
 
 
@@ -168,27 +189,10 @@ function NavCard() {
                 </Tooltip>
 
                 {openProfile && (
-                    <div className="absolute right-0 mt-3 w-48 rounded-xl bg-white shadow-lg border z-50">
-                        <ul className="py-2 text-sm">
-                            <li>
-                                <button className="w-full px-4 py-2 text-left hover:bg-gray-100">
-                                    My Profile
-                                </button>
-                            </li>
-                            <li>
-                                <button className="w-full px-4 py-2 text-left hover:bg-gray-100">
-                                    Settings
-                                </button>
-                            </li>
-                            <li className="border-t mt-1">
-                                <button className="w-full px-4 py-2 text-left text-red-600 hover:bg-red-50 cursor-pointer"
-                                    onClick={() => window.location.href = "https://www.google.com"}
-                                >
-                                    Logout
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+                    <ProfileDropdown
+                        open={openProfile}
+                        onClose={() => setOpenProfile(false)}
+                    />
                 )}
             </div>
         </div>
