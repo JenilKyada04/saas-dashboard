@@ -4,12 +4,24 @@ import Navright from "./NavCard";
 
 import { FiMenu } from "react-icons/fi";
 import { useSidebar } from "../context/SidebarContext";
+import Link from "next/link"
+import { SlashIcon } from "lucide-react"
 import {
     Tooltip,
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Button } from '@/components/ui/button'
+
+
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+
 
 export default function Header() {
     const { setOpen } = useSidebar();
@@ -24,16 +36,40 @@ export default function Header() {
                     <FiMenu />
                 </button>
 
-
-
-                <h2 className="font-normal  hidden md:block text-black cursor-pointer">
+                {/* <h2 className="font-normal  hidden md:block text-black cursor-pointer">
                     <Tooltip>
                         <TooltipTrigger className="cursor-pointer">Dashboard</TooltipTrigger>
                         <TooltipContent>
                             <p>Dashboard</p>
                         </TooltipContent>
                     </Tooltip>
-                </h2>
+                </h2> */}
+
+                <Breadcrumb>
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link href="/">Dashboard</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+
+                        <BreadcrumbSeparator>
+                            <SlashIcon />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link href="/courses">Courses</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator>
+                            <SlashIcon />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                            <BreadcrumbPage>Courses Page</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
+
             </div>
 
             <Navright />

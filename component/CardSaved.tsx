@@ -18,13 +18,22 @@ export default function NavbarSaved() {
                 </span> 
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
             {savedCourses.length === 0 && (
                 <div className="text-center py-8">
                     <p className="text-sm text-gray-500">
-                        No saved courses yet
-                    </p>
-                    <p className="text-xs text-gray-400 mt-1">
-                        Click the bookmark icon to save courses
+                        No saved courses 
                     </p>
                 </div>
             )}
@@ -60,7 +69,6 @@ export default function NavbarSaved() {
                     </div>
                 ))}
             </div>
-
 
         </div>
     );

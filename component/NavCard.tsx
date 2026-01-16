@@ -5,7 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
 
 import { Dropdown } from "./Dropdown";
-import NavbarSaved from "./NavbarSaved";
+import NavbarSaved from "./CardSaved";
 import Notification from "./Notification";
 import { useSavedCourses } from "../context/SavedCoursesContext";
 import ChatDropdown from "./ChatDropdown";
@@ -187,7 +187,6 @@ function NavCard() {
                 {openProfile && (
                     <ProfileDropdown
                         open={openProfile}
-                        onClose={() => setOpenProfile(false)}
                     />
                 )}
             </div>

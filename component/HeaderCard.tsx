@@ -59,8 +59,7 @@ function DashboardCard() {
 
         const radius = 20;
         const circumference = 2 * Math.PI * radius;
-        const offset =
-          circumference - (course.progress / 100) * circumference;
+        const offset = circumference - (course.progress / 100) * circumference;
 
         return (
           <div
