@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { Linechart } from "../component/Linechart";
 import { Barchart } from "../component/Barchart";
-import Card from "../component/HeaderCard";
+import DashboardCard from "../component/DashboardCard";
 import Topteachers from "../component/Topteachers";
 import Reminders from "../component/Reminders";
 import {
@@ -12,10 +13,12 @@ import {
 } from "@/components/ui/tooltip";
 
 export default function DashboardClient() {
+  const [activeTab, setActiveTab] = useState<"ongoing" | "completed">("ongoing");
+
   return (
     <div className="md:p-6 p-3">
       <Tooltip>
-        <TooltipTrigger className="text-xl font-semibold mt-3 md:mt-0 cursor-pointer">
+        <TooltipTrigger className="text-xl font-semibold cursor-pointer">
           Hello, Antonio
         </TooltipTrigger>
         <TooltipContent>
@@ -26,12 +29,26 @@ export default function DashboardClient() {
       <div className="mt-6 pt-4 bg-white relative rounded-lg shadow">
         <span className="absolute left-0 top-4 h-6 w-1 bg-blue-600 rounded-full" />
 
-        <div className="flex justify-between">
-          <h6 className="pl-5 font-semibold text-xl cursor-pointer">
-            On going courses
+        <div className="flex justify-between items-center">
+          <h6 className="pl-5 font-semibold text-xl">
             <span
-              className="text-gray-400 pl-5 cursor-pointer"
-              onClick={() => alert("DONE")}
+              onClick={() => setActiveTab("ongoing")}
+              className={`cursor-pointer ${
+                activeTab === "ongoing"
+                  ? "text-black"
+                  : "text-gray-400"
+              }`}
+            >
+              On going courses
+            </span>
+
+            <span
+              onClick={() => setActiveTab("completed")}
+              className={`pl-5 cursor-pointer ${
+                activeTab === "completed"
+                  ? "text-black"
+                  : "text-gray-400"
+              }`}
             >
               Completed Courses
             </span>
@@ -41,7 +58,7 @@ export default function DashboardClient() {
         </div>
 
         <div className="p-2">
-          <Card />
+          <DashboardCard type={activeTab} />
         </div>
       </div>
 
@@ -49,7 +66,6 @@ export default function DashboardClient() {
         <div className="lg:col-span-8">
           <Barchart />
         </div>
-
         <div className="lg:col-span-4">
           <Reminders />
         </div>
